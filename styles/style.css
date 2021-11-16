@@ -1,0 +1,73 @@
+body {
+    background-color: #222;
+    color: aqua;
+    scrollbar-base-color: aqua;
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    border: 3px solid transparent;
+    border-radius: 5px
+}
+.light-mode{
+    background-color:white;
+    color:black;
+}
+* {
+    color:aqua;
+
+}
+.navbar {
+    position: fixed;
+    background-image: url(../images/footer_lodyasDarktoLight.png);
+    background-repeat: repeat;
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    border: 3px solid ;
+    border-radius: 5px;
+    width: 100%;
+    top: -100px;
+    left: 0;
+    background-color: #222;
+    outline-color: darkcyan;
+    outline-style: solid;
+    transition: top 0.5s;
+}
+textarea {
+    background-image: url(../images/footer_lodyasDarktoLight.png);
+}
+footer {
+    background-image: url(../images/footer_lodyasDarktoLight.png);
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    outline-color: cyan;
+    outline-style: solid;
+}
+.headerbutton {
+    color: darkred;
+    background-color: black;
+    outline-color: black;
+    border-color: black;
+    border: double
+}
+
+select {
+    background-color: #222;
+    color: white;
+}
+option {
+    color: white
+}
+input {
+    background-color: #222;
+    color: white
+}
+button {
+    background-color: #222;
+    border: inset;
+    border-color: dodgerblue;
+}
+ .button:hover{
+     background-color:#333;
+ }
