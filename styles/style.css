@@ -15,22 +15,7 @@ body {
     color:aqua;
 
 }
-.navbar {
-    position: fixed;
-    background-image: url(../images/footer_lodyasDarktoLight.png);
-    background-repeat: repeat;
-    background-clip: padding-box;
-    -webkit-background-clip: padding-box;
-    border: 3px solid ;
-    border-radius: 5px;
-    width: 100%;
-    top: -100px;
-    left: 0;
-    background-color: #222;
-    outline-color: darkcyan;
-    outline-style: solid;
-    transition: top 0.5s;
-}
+
 textarea {
     background-image: url(../images/footer_lodyasDarktoLight.png);
 }
@@ -49,7 +34,8 @@ footer {
     background-color: black;
     outline-color: black;
     border-color: black;
-    border: double
+    border: double;
+    position:absolute;
 }
 
 select {
