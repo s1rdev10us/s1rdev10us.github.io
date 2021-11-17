@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/smallSwitch.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <script src="scripts/header.js"></script>
+    
 </head>
 <body>
     <!--Header-->
@@ -21,14 +22,14 @@
             <h1 {font-size: 40px}>
                 <!--Page Title-->
 
-                    <img height="30" width="30" alt="ROFL Waffle" src="images/ROFL_Waffle.gif">
-                
-                
-
-                
+                <img height="30" width="30" alt="ROFL Waffle" src="images/ROFL_Waffle.gif">
 
 
-                
+
+
+
+
+
                 <!--Refresh-->
                 <button class="headerbutton button" type=button
                         onclick="history.go(0)">
@@ -40,7 +41,13 @@
         </div>
     </header>
 
-
+    <?php
+    $jsonString = file_get_contents('data/visitorCounter.json');
+    $data = json_decode($jsonString, true);
+    echo "Hello World";
+    $newJsonString = json_encode($data);
+    file_put_contents('data/visitorCounter.json', $newJsonString);
+    ?>
     <br />
     <a href="https://s1rdev10us.github.io/Tests">Test Zone</a>
     <br />
