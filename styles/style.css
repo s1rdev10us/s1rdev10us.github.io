@@ -35,7 +35,9 @@ footer {
     outline-color: black;
     border-color: black;
     border: double;
-    position:fixed;
+    position: fixed;
+    width: 100%;
+    outline-style: solid;
 }
 
 select {
