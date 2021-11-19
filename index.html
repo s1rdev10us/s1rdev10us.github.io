@@ -41,13 +41,7 @@
         </div>
     </header>
 
-    <?php
-    $jsonString = file_get_contents('data/visitorCounter.json');
-    $data = json_decode($jsonString, true);
-    echo "Hello World";
-    $newJsonString = json_encode($data);
-    file_put_contents('data/visitorCounter.json', $newJsonString);
-    ?>
+    
     <br />
     <a href="https://s1rdev10us.github.io/Tests">Test Zone</a>
     <br />
