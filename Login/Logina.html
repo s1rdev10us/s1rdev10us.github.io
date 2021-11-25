@@ -1,388 +1,446 @@
 <!DOCTYPE html>
 <!-- saved from url=(0044)https://gmetrix.net/Login.aspx?ReturnUrl=%2F -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"><title>
-	Login
-</title><link href="https://gmetrix.net/MasterPages/GMetrixSMS.png" rel="shortcut icon"><link href="./Logina_files/login.css" rel="stylesheet">
-<link rel="stylesheet/less" type="text/css" href="./Logina_files/dynamicLogin.less"><style type="text/css" id="less:Stylesheets-dynamicLogin">body {
-  background: url(https://www.gmetrix.net/Images/footer_lodyasDarktoLight.png);
-  background-size: cover;
-}
-.borderTop {
-  background-color: #ffffff;
-}
-.loginPage {
-  background-color: #ffffff;
-}
-.largeDiv {
-  background-color: #ffffff;
-  border-top: 4px solid #ffffff;
-}
-.loginPanelTitle {
-  color: #ffffff;
-}
-.login-box-1 {
-  border-color: #365a8f;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px #365a8f;
-}
-.login-box-2 {
-  border-color: #ffffff;
-  background-color: #ffffff;
-}
-.LoginForm input {
-  border-color: #365a8f;
-  outline: none;
-}
-.LoginLogo {
-  content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
-}
-.LoginLogo::after {
-  background-image: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
-}
-.LoginLogoText-1::before {
-  content: none;
-}
-select > option:focus {
-  background-color: #ffffff;
-}
-select > option:hover {
-  background-color: #ffffff;
-}
-.LoginButton {
-  background-color: #365a8f;
-  color: #ffffff;
-  border-color: #365a8f;
-}
-.LoginButton:hover {
-  background-color: #181F29;
-  box-shadow: inset 0 0 70px #365a8f;
-  color: #ffffff;
-}
-.ForgotPassword {
-  color: #0000ee;
-}
-.ForgotPassword:hover {
-  color: #808080;
-}
-.sign-up {
-  color: #0000ee;
-}
-.sign-up:hover {
-  color: #808080;
-}
-.loginHelpLogo:hover {
-  color: #808080;
-}
-.loginDownloadLogo:hover {
-  color: #808080;
-}
-.LoginForm-reg input {
-  border-color: #365a8f;
-}
-.locationDropDown {
-  border-color: #365a8f;
-}
-#GoToAdminLink a:hover {
-  color: #808080;
-}
-.footer {
-  border-top-color: #365a8f;
-}
-.mainFGPContainer {
-  border-color: #365a8f;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px #365a8f;
-}
-.mainFGPContainer > .RegLogo {
-  content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
-}
-.ForgotButton-1 {
-  background-color: #365a8f;
-  color: #ffffff;
-  border: 1px solid #365a8f;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.ForgotButton-1:hover {
-  background-color: #181F29;
-  box-shadow: inset 0 0 70px #365a8f;
-}
-.ForgotButton-2 {
-  background-color: #365a8f;
-  color: #ffffff;
-  border: 1px solid #365a8f;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.ForgotButton-2:hover {
-  background-color: #181F29;
-  box-shadow: inset 0 0 70px #365a8f;
-}
-.mainFGPContainer > #ForgotPasswordstep > .infoContainer {
-  background-color: #181F29;
-}
-.mainContainer {
-  border-color: #365a8f;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px #365a8f;
-}
-.RegLogo {
-  content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
-}
-.successRego {
-  border-color: #365a8f;
-  background-color: #ffffff;
-}
-.divShowSuccessEmail {
-  border-color: #365a8f;
-  box-shadow: 0 0 5px #365a8f;
-  background-color: #ffffff;
-}
-.RegButton {
-  cursor: pointer;
-  background-color: #365a8f;
-  color: #ffffff;
-  border-color: #365a8f;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.RegButton:hover {
-  background-color: #181F29;
-  box-shadow: inset 0 0 70px #365a8f;
-  color: #ffffff;
-}
-.reg-errorbox {
-  border: 1px solid #ffffff;
-  background-color: #ffffff;
-  box-shadow: 0 0 5px #365a8f;
-}
-.infoContainer {
-  background-color: #ffffff;
-}
-.passwordRequirementsContainer {
-  background: #f0f0f0;
-  border: 1px solid #181F29;
-  color: #181F29;
-}
-</style>        
-        
-        
-<link href="./Logina_files/jquery-ui.css" rel="stylesheet"><link href="./Logina_files/Spinner.css" rel="stylesheet"><link href="./Logina_files/fontawesome.css" rel="stylesheet">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>
+        Login
+    </title>
+    <link href="https://gmetrix.net/MasterPages/GMetrixSMS.png" rel="shortcut icon">
+    <link href="./Logina_files/login.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="./Logina_files/dynamicLogin.less">
+    <style type="text/css" id="less:Stylesheets-dynamicLogin">
+        body {
+            background: url(https://www.gmetrix.net/Images/footer_lodyasDarktoLight.png);
+            background-size: cover;
+        }
+
+        .borderTop {
+            background-color: #ffffff;
+        }
+
+        .loginPage {
+            background-color: #ffffff;
+        }
+
+        .largeDiv {
+            background-color: #ffffff;
+            border-top: 4px solid #ffffff;
+        }
+
+        .loginPanelTitle {
+            color: #ffffff;
+        }
+
+        .login-box-1 {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .login-box-2 {
+            border-color: #ffffff;
+            background-color: #ffffff;
+        }
+
+        .LoginForm input {
+            border-color: #365a8f;
+            outline: none;
+        }
+
+        .LoginLogo {
+            content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+        }
+
+            .LoginLogo::after {
+                background-image: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+            }
+
+        .LoginLogoText-1::before {
+            content: none;
+        }
+
+        select > option:focus {
+            background-color: #ffffff;
+        }
+
+        select > option:hover {
+            background-color: #ffffff;
+        }
+
+        .LoginButton {
+            background-color: #365a8f;
+            color: #ffffff;
+            border-color: #365a8f;
+        }
+
+            .LoginButton:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+                color: #ffffff;
+            }
+
+        .ForgotPassword {
+            color: #0000ee;
+        }
+
+            .ForgotPassword:hover {
+                color: #808080;
+            }
+
+        .sign-up {
+            color: #0000ee;
+        }
+
+            .sign-up:hover {
+                color: #808080;
+            }
+
+        .loginHelpLogo:hover {
+            color: #808080;
+        }
+
+        .loginDownloadLogo:hover {
+            color: #808080;
+        }
+
+        .LoginForm-reg input {
+            border-color: #365a8f;
+        }
+
+        .locationDropDown {
+            border-color: #365a8f;
+        }
+
+        #GoToAdminLink a:hover {
+            color: #808080;
+        }
+
+        .footer {
+            border-top-color: #365a8f;
+        }
+
+        .mainFGPContainer {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+            .mainFGPContainer > .RegLogo {
+                content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+            }
+
+        .ForgotButton-1 {
+            background-color: #365a8f;
+            color: #ffffff;
+            border: 1px solid #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .ForgotButton-1:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+            }
+
+        .ForgotButton-2 {
+            background-color: #365a8f;
+            color: #ffffff;
+            border: 1px solid #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .ForgotButton-2:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+            }
+
+        .mainFGPContainer > #ForgotPasswordstep > .infoContainer {
+            background-color: #181F29;
+        }
+
+        .mainContainer {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .RegLogo {
+            content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+        }
+
+        .successRego {
+            border-color: #365a8f;
+            background-color: #ffffff;
+        }
+
+        .divShowSuccessEmail {
+            border-color: #365a8f;
+            box-shadow: 0 0 5px #365a8f;
+            background-color: #ffffff;
+        }
+
+        .RegButton {
+            cursor: pointer;
+            background-color: #365a8f;
+            color: #ffffff;
+            border-color: #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .RegButton:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+                color: #ffffff;
+            }
+
+        .reg-errorbox {
+            border: 1px solid #ffffff;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .infoContainer {
+            background-color: #ffffff;
+        }
+
+        .passwordRequirementsContainer {
+            background: #f0f0f0;
+            border: 1px solid #181F29;
+            color: #181F29;
+        }
+    </style>
 
 
-        
-        
-        
+    <link href="./Logina_files/jquery-ui.css" rel="stylesheet">
+    <link href="./Logina_files/Spinner.css" rel="stylesheet">
+    <link href="./Logina_files/fontawesome.css" rel="stylesheet">
 
 
-<link href="./Logina_files/bootstrapcss.css" rel="stylesheet">
 
 
-        
 
-        
-        
-        
-       
-        
-        
-       <style>
+
+
+    <link href="./Logina_files/bootstrapcss.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+    <style>
         .LoadingDiv {
-        position: fixed;
-        padding: 0;
-        margin: 0;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255,255,0.4);
-        z-index: 1051;
+            position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.4);
+            z-index: 1051;
         }
 
         #MasterloadIcon {
-        margin-top: 16%;
+            margin-top: 16%;
         }
 
-        
+
 
         /*.modal-header > button {
         margin-top: -20px !important;
         }*/
-        </style>
-    </head>
-    <body>
-        <div role="main">
-            <div class="LoadingDiv" id="LoadingDivCover" style="display: none;">
-                <div class="spinnerContainer" id="MasterloadIcon" style="margin-left: 50%">
-                    <div class="spinner">
-                        <div class="spinner-circle spinner-circle-outer"></div>
-                        <div class="spinner-circle-inner spinner-circle-off"></div>
-                        <div class="spinner-circle spinner-circle-single-1"></div>
-                        <div class="spinner-circle spinner-circle-single-2"></div>
-                    </div>
-                </div>
-            </div>
-        <form method="post" action="https://gmetrix.net/Login.aspx?ReturnUrl=%2f" onsubmit="javascript:return WebForm_OnSubmit();" id="dropDownForm" class="form-horizontal">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WdTE8keH06jFoJMvV2pnLuORuBicdNc7mCUPRnqrECAqlbMOtn6heMC5TPYAx2sGF4VhJ70+ggPaoJm3WGCYcWCZv8dQV8encwLbbTW4REP9g7h0ZRq4p1FQXpyIWNDqazcyMsl2LNlN4WnUcIAa7+cOOcPeSP2jATDzOVAKs8qEp9a/9nF9sPsiJLHNx2iiSdnytssO6zBAXIcqfhpAMBK97xCNXSLLTl6nzpNcNbGIY3hDmJp6+S3M6mNXGPXk61J9Q6IPzGLbQXqTwZKdWemoN+QCAJzhMrZ71v+A/g+gzly7Rh4k8hve/nS6HFPpWF0ew2vXAb+ehlEl8giKkIHz1Bzcji+KkBXWttB7VG5bjGBuEMnqN+KMdcGZ9B9a27q6VDlEUQ0+jcs/BYQIzbl7ujdD2jNYQp1/fiq1h/aNhSyBRe6+LfA8igjIWDxtLo2nM75UZAlqH0mJJ6ezArlodF5Jm5GNPqDqnLAHMeVOS0iNNrND9dP/z99wskk9ciG5pc/J/ou8iWg6a7S7mcUZ6bpIMWMx7hr0Td+2QsVt7JuDmhaCNTGoruj6oXFiOrEiY0PwnFFLBzLO2Mx6HtIZ+TbiJM4uybkZhgoG+2V5Z6rDZrBIZen5SeM0Gk9IlWMd9uXB5tWu+1cHzlISMh+keBXO8K+I9u35sW9ri9IxERSvbblbX4DR5P//OGV2iuAEhk2MJawj/FULtId4fqGrkOq3xMkv+04y3YqreDb8+3Kx6TWV0SvApENqqJXt06kRbuK0Q9ap42wDj4PT99SSdZSkHP+Qq1YUpnAW5rbFpXEs8390c0/djvXa+RLf39IPLq0JeH7vL9r2kxROMLW1u7Q60DXaKX5g1KMV8cDFynwM1/5YDAOTE/jw6YlnlfaIQSyJ+u7pcS1jGuNRz+64TZ6/1D7ixBXSHh/OAz/I+cVImRxMgHXxj/bXU+G5Rvbr+v71/5hRtqH+Jy5J2XDdtgVV9Tnpifne7qSTIs6iJuhJnfWhih90d0jrI9xHzPQEmWc/jiB9aDbgBAqsFuna3uktxPYMI78OqtyLjDVFNv2vHL+GdHLeCUcBm3E5Nf5Rh963HaqYBTRwHgG9ckUPJy8krfTI99bIvP7S6kBlR5WQf01eYfZHbahWgVSpMyCWOlI3bF9pxnPTeL5/cIwxyoIsx196QATCq0agHNM=">
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
-	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="2xUg05QJUA0Uo2lb-r4c-9zmlrv6XBVIpkLEge3x3hO-_91FTBW10L17IkAOpXSHAqfmgfBdCj4I7s8KuQHHPg2">
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="xPu/WQMnh41qEow0edPIJffluDhnDCv3z01vMwss9e6mRdkAg++ltpSSSNUtNEHSE65pLpvO8QLtttKwoUWso1Lw0I0vxe2cLH2jPdqWb7cr33XqAZwljWZsOiICDWd7SyBbH+TH/uLjFG/hns6XOSmZUSpSrbE+IKnmCGuALqlD1eI+R/dTVfnETQQFhLrKs+376vz3nX2LEx+Vg2gEXwDglZw4GI0Q4KiD3VsxTSxrSkgQ+UVXjbArk+e9KobEyCZnVHHjlxJA4W1cboEQTTSh2SEZzcvbKtY4NMT3K1cXoMFbA9gycGgttfEG0TOgx4q1CX/pADoj3v5mj66NJf3yRXYPL76EH3yvtRYnRtnupUeRwMwEOJRisOCRQXTS90fhAtmQhgtfm55HY3jBPl/5wLizv2iW41g+OgKBz1T8Rt7TEZJ3MPFpjQwZMTtr4VJK78qIodHLHLzYNtGyJpczcLU133OGEXTBSUTsT6nYxwNJXYlTvWyN+yj2TfLO3DUihkKSa15rsprX5nmYFtyfT5/fEo+X6VsAO3KmIDl37JZAlSchmQEgoV5vvy90+ITipUyFbVafR+3UMtpJIkkhS3FxWEgqcemY2rMVlE3Mx53W4Xq5/wsSGejXDCNA">
-</div>
-            <div>
-                
-
-                
-    
-    
-
-
-    
-    <style>
-
-        @media screen and (max-height: 650px)  {
-            .MbitionMessage {
-                display: none;
-
-            }
-            .pennieDiv {
-                display: block;
-            }
-        
-        
-        }
-
     </style>
-
-
-
-    <div class="login-box-1">
-        <div class="LoginForm">
-
-            <div class="LoginLogoContainer"><span class="LoginLogo"></span></div>
-            <div class="LoginLogoText-1">Skills Management System</div>
-     
-            <div class="LoginFields">
-                <div id="body_loginPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;body_signInButton&#39;)">
-
-
-                    <button name="ctl00$body$UsernameTxtBox" id="x" placeholder="Ben.Simmons" autocomplete="off" style="width: 250px !important; border-radius: 4px; padding: 0; padding-left: 5px; padding-right: 5px; height: 30px; margin-top: 5px; margin-bottom: 5px; box-sizing: border-box; border: 1px solid #365a8f; outline: none;
-      color:#222 ;background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
-                        .
-                    </button>
-                    <br />
-                    <!--Create a cookie with the name 'username' and then reload the page-->
-                    <script>
-                        //document.cookie = 'username=name; expires=Thu, 18 Dec 20222 12:00:00 UTC; path=/';
-                        function getCookie(cname) {
-                            let name = cname + "=";
-                            let decodedCookie = decodeURIComponent(document.cookie);
-                            let ca = decodedCookie.split(';');
-                            for (let i = 0; i < ca.length; i++) {
-                                let c = ca[i];
-                                while (c.charAt(0) == ' ') {
-                                    c = c.substring(1);
-                                }
-                                if (c.indexOf(name) == 0) {
-                                    return c.substring(name.length, c.length);
-                                }
-                            }
-                            return "";
-                        }
-                        console.log('"' + getCookie('username') + '"')
-                        document.getElementById('x').innerHTML = '"' + getCookie('username') + '"';
-                    </script>
-                    Username Autofilled by Lastpass
-                    <span id="body_rfvTxtUser" class="usernameRequired" style="display:none;">Username</span>
-
-
-
-                    <input name="ctl00$body$PasswordTxtBox" type="password" id="body_PasswordTxtBox" placeholder="•••••••••••" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
-                    Password Autofilled by Lastpass
-                    <span id="body_rfvTxtKey" class="passwordRequired" style="display:none;"></span>
-
-
-                    <select name="ctl00$body$languageDropDown" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$body$languageDropDown\&#39;,\&#39;\&#39;)&#39;, 0)" id="body_languageDropDown" class="languageDropDown">
-                        <option value="de-DE">Deutsch</option>
-                        <option selected="selected" value="en-US">English</option>
-                        <option value="es-MX">Español</option>
-                        <option value="fr-FR">Française</option>
-                        <option value="nl-NL">Nederlands</option>
-                        <option value="it-IT">Italiano</option>
-                        <option value="pt-BR">Português</option>
-                        <option value="vi-VN">Tiếng Việt</option>
-                        <option value="bg-BG">български</option>
-                        <option value="ru-RU">Русский язык</option>
-                        <option value="zh-TW">繁體中文</option>
-                        <option value="zh-CN">简体中文</option>
-                        <option value="ja-JP">日本語</option>
-                        <option value="th-TH">ไทย</option>
-                        <option value="ar-SA">العَرَبِيَّة</option>
-                        <option value="tr-TR">Türkçe</option>
-
-                    </select>
-
-
-
-                    <input type="button" name="ctl00$body$signInButton" value="Sign In" onclick="window.location.replace('Login.html');" id="body_signInButton" class="LoginButton" style="height:30px;width:250px;">
-
-
-
-
-
-
-
-
-
-
+</head>
+<body>
+    <div role="main">
+        <div class="LoadingDiv" id="LoadingDivCover" style="display: none;">
+            <div class="spinnerContainer" id="MasterloadIcon" style="margin-left: 50%">
+                <div class="spinner">
+                    <div class="spinner-circle spinner-circle-outer"></div>
+                    <div class="spinner-circle-inner spinner-circle-off"></div>
+                    <div class="spinner-circle spinner-circle-single-1"></div>
+                    <div class="spinner-circle spinner-circle-single-2"></div>
                 </div>
-
-                
-                
-
-                
-                
-        
-        
-    
-    
-    
-            </div>
-            <div id="body_loginFooter" class="LoginFooter">
-                
-                <a class="loginDownLoadLogo" href="https://gmetrix.net/download.aspx" target="_blank">
-                    
-                </a>
-                <span id="GoToAdminLink" style="padding-left: 75px;">
-                    <a href="https://www.gmetrix.net/manage">Go to Administrator Portal</a>
-                </span>
-
             </div>
         </div>
-    </div>
+        <form method="post" action="https://gmetrix.net/Login.aspx?ReturnUrl=%2f" onsubmit="javascript:return WebForm_OnSubmit();" id="dropDownForm" class="form-horizontal">
+            <div class="aspNetHidden">
+                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+                <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WdTE8keH06jFoJMvV2pnLuORuBicdNc7mCUPRnqrECAqlbMOtn6heMC5TPYAx2sGF4VhJ70+ggPaoJm3WGCYcWCZv8dQV8encwLbbTW4REP9g7h0ZRq4p1FQXpyIWNDqazcyMsl2LNlN4WnUcIAa7+cOOcPeSP2jATDzOVAKs8qEp9a/9nF9sPsiJLHNx2iiSdnytssO6zBAXIcqfhpAMBK97xCNXSLLTl6nzpNcNbGIY3hDmJp6+S3M6mNXGPXk61J9Q6IPzGLbQXqTwZKdWemoN+QCAJzhMrZ71v+A/g+gzly7Rh4k8hve/nS6HFPpWF0ew2vXAb+ehlEl8giKkIHz1Bzcji+KkBXWttB7VG5bjGBuEMnqN+KMdcGZ9B9a27q6VDlEUQ0+jcs/BYQIzbl7ujdD2jNYQp1/fiq1h/aNhSyBRe6+LfA8igjIWDxtLo2nM75UZAlqH0mJJ6ezArlodF5Jm5GNPqDqnLAHMeVOS0iNNrND9dP/z99wskk9ciG5pc/J/ou8iWg6a7S7mcUZ6bpIMWMx7hr0Td+2QsVt7JuDmhaCNTGoruj6oXFiOrEiY0PwnFFLBzLO2Mx6HtIZ+TbiJM4uybkZhgoG+2V5Z6rDZrBIZen5SeM0Gk9IlWMd9uXB5tWu+1cHzlISMh+keBXO8K+I9u35sW9ri9IxERSvbblbX4DR5P//OGV2iuAEhk2MJawj/FULtId4fqGrkOq3xMkv+04y3YqreDb8+3Kx6TWV0SvApENqqJXt06kRbuK0Q9ap42wDj4PT99SSdZSkHP+Qq1YUpnAW5rbFpXEs8390c0/djvXa+RLf39IPLq0JeH7vL9r2kxROMLW1u7Q60DXaKX5g1KMV8cDFynwM1/5YDAOTE/jw6YlnlfaIQSyJ+u7pcS1jGuNRz+64TZ6/1D7ixBXSHh/OAz/I+cVImRxMgHXxj/bXU+G5Rvbr+v71/5hRtqH+Jy5J2XDdtgVV9Tnpifne7qSTIs6iJuhJnfWhih90d0jrI9xHzPQEmWc/jiB9aDbgBAqsFuna3uktxPYMI78OqtyLjDVFNv2vHL+GdHLeCUcBm3E5Nf5Rh963HaqYBTRwHgG9ckUPJy8krfTI99bIvP7S6kBlR5WQf01eYfZHbahWgVSpMyCWOlI3bF9pxnPTeL5/cIwxyoIsx196QATCq0agHNM=">
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="aspNetHidden">
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
+                <input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="2xUg05QJUA0Uo2lb-r4c-9zmlrv6XBVIpkLEge3x3hO-_91FTBW10L17IkAOpXSHAqfmgfBdCj4I7s8KuQHHPg2">
+                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="xPu/WQMnh41qEow0edPIJffluDhnDCv3z01vMwss9e6mRdkAg++ltpSSSNUtNEHSE65pLpvO8QLtttKwoUWso1Lw0I0vxe2cLH2jPdqWb7cr33XqAZwljWZsOiICDWd7SyBbH+TH/uLjFG/hns6XOSmZUSpSrbE+IKnmCGuALqlD1eI+R/dTVfnETQQFhLrKs+376vz3nX2LEx+Vg2gEXwDglZw4GI0Q4KiD3VsxTSxrSkgQ+UVXjbArk+e9KobEyCZnVHHjlxJA4W1cboEQTTSh2SEZzcvbKtY4NMT3K1cXoMFbA9gycGgttfEG0TOgx4q1CX/pADoj3v5mj66NJf3yRXYPL76EH3yvtRYnRtnupUeRwMwEOJRisOCRQXTS90fhAtmQhgtfm55HY3jBPl/5wLizv2iW41g+OgKBz1T8Rt7TEZJ3MPFpjQwZMTtr4VJK78qIodHLHLzYNtGyJpczcLU133OGEXTBSUTsT6nYxwNJXYlTvWyN+yj2TfLO3DUihkKSa15rsprX5nmYFtyfT5/fEo+X6VsAO3KmIDl37JZAlSchmQEgoV5vvy90+ITipUyFbVafR+3UMtpJIkkhS3FxWEgqcemY2rMVlE3Mx53W4Xq5/wsSGejXDCNA">
+            </div>
+            <div>
+
+
+
+
+
+
+
+
+                <style>
+
+                    @media screen and (max-height: 650px) {
+                        .MbitionMessage {
+                            display: none;
+                        }
+
+                        .pennieDiv {
+                            display: block;
+                        }
+                    }
+                </style>
+
+
+
+                <div class="login-box-1">
+                    <div class="LoginForm">
+
+                        <div class="LoginLogoContainer"><span class="LoginLogo"></span></div>
+                        <div class="LoginLogoText-1">Skills Management System</div>
+
+                        <div class="LoginFields">
+                            <div id="body_loginPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;body_signInButton&#39;)">
+
+
+                                <button name="ctl00$body$UsernameTxtBox" id="x" placeholder="Ben.Simmons" autocomplete="off" style="
+    width: 250px!important;
+    border-radius: 4px;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    border: 1px solid #365a8f;
+    outline: none;
+      color:#222 ;background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                    .
+                                </button>
+                                <br />
+                                <!--Create a cookie with the name 'username' and then reload the page-->
+                                <script>
+                                    //document.cookie = 'username=name; expires=Thu, 18 Dec 20222 12:00:00 UTC; path=/';
+                                    function getCookie(cname) {
+                                        let name = cname + "=";
+                                        let decodedCookie = decodeURIComponent(document.cookie);
+                                        let ca = decodedCookie.split(';');
+                                        for (let i = 0; i < ca.length; i++) {
+                                            let c = ca[i];
+                                            while (c.charAt(0) == ' ') {
+                                                c = c.substring(1);
+                                            }
+                                            if (c.indexOf(name) == 0) {
+                                                return c.substring(name.length, c.length);
+                                            }
+                                        }
+                                        return "";
+                                    }
+                                    console.log('"' + getCookie('username') + '"')
+                                    document.getElementById('x').innerHTML = '"' + getCookie('username') + '"';
+                                </script>
+                                Username Autofilled by Lastpass
+                                <span id="body_rfvTxtUser" class="usernameRequired" style="display:none;">Username</span>
+
+
+
+                                <input name="ctl00$body$PasswordTxtBox" type="password" id="body_PasswordTxtBox" placeholder="•••••••••••" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                Password Autofilled by Lastpass
+                                <span id="body_rfvTxtKey" class="passwordRequired" style="display:none;"></span>
+
+
+                                <select name="ctl00$body$languageDropDown" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$body$languageDropDown\&#39;,\&#39;\&#39;)&#39;, 0)" id="body_languageDropDown" class="languageDropDown">
+                                    <option value="de-DE">Deutsch</option>
+                                    <option selected="selected" value="en-US">English</option>
+                                    <option value="es-MX">Español</option>
+                                    <option value="fr-FR">Française</option>
+                                    <option value="nl-NL">Nederlands</option>
+                                    <option value="it-IT">Italiano</option>
+                                    <option value="pt-BR">Português</option>
+                                    <option value="vi-VN">Tiếng Việt</option>
+                                    <option value="bg-BG">български</option>
+                                    <option value="ru-RU">Русский язык</option>
+                                    <option value="zh-TW">繁體中文</option>
+                                    <option value="zh-CN">简体中文</option>
+                                    <option value="ja-JP">日本語</option>
+                                    <option value="th-TH">ไทย</option>
+                                    <option value="ar-SA">العَرَبِيَّة</option>
+                                    <option value="tr-TR">Türkçe</option>
+
+                                </select>
+
+
+
+                                <input type="button" name="ctl00$body$signInButton" value="Sign In" onclick="window.location.replace('Login.html');" id="body_signInButton" class="LoginButton" style="height:30px;width:250px;">
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div id="body_loginFooter" class="LoginFooter">
+
+                            <a class="loginDownLoadLogo" href="https://gmetrix.net/download.aspx" target="_blank">
+
+                            </a>
+                            <span id="GoToAdminLink" style="padding-left: 75px;">
+                                <a href="https://www.gmetrix.net/manage">Go to Administrator Portal</a>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
 
             </div>
-        
 
 
 
 
 
 
-</form>
+
+        </form>
 
         <div id="masterFooter" class="footer">
             <div id="copy">
@@ -393,27 +451,23 @@ select > option:hover {
                 <a href="http://gmetrix.com/Home/PrivacyPolicyEducation" target="_blank"> Privacy Policy</a> |
                 <a href="https://support.gmetrix.net/" target="_blank">Help/Support</a>
             </div>
-            
-        </div>
-            
-            
-            <style>
-                /*styles not working on mobile? just throw out the entire element! TODO: not this. */
-                @media screen and (max-width: 950px)  {
-                    .policyBanner {
-                        display: none;
 
-                    }
-                    
+        </div>
+
+
+        <style>
+            /*styles not working on mobile? just throw out the entire element! TODO: not this. */
+            @media screen and (max-width: 950px) {
+                .policyBanner {
+                    display: none;
                 }
+            }
+        </style>
 
-              
 
-            </style>
-    
-            
 
-        </div>
-    
+    </div>
 
-</body></html>
+
+</body>
+</html>
