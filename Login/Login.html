@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://gmetrix.net/Login.aspx?ReturnUrl=%2F -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>
+        Login
+    </title>
+    <link href="https://gmetrix.net/MasterPages/GMetrixSMS.png" rel="shortcut icon">
+    <link href="./Login_files/login.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="./Login_files/dynamicLogin.less">
+    <style type="text/css" id="less:Stylesheets-dynamicLogin">
+        body {
+            background: url(https://www.gmetrix.net/Images/footer_lodyasDarktoLight.png);
+            background-size: cover;
+        }
+
+        .borderTop {
+            background-color: #ffffff;
+        }
+
+        .loginPage {
+            background-color: #ffffff;
+        }
+
+        .largeDiv {
+            background-color: #ffffff;
+            border-top: 4px solid #ffffff;
+        }
+
+        .loginPanelTitle {
+            color: #ffffff;
+        }
+
+        .login-box-1 {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .login-box-2 {
+            border-color: #ffffff;
+            background-color: #ffffff;
+        }
+
+        .LoginForm input {
+            border-color: #365a8f;
+            outline: none;
+        }
+
+        .LoginLogo {
+            content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+        }
+
+            .LoginLogo::after {
+                background-image: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+            }
+
+        .LoginLogoText-1::before {
+            content: none;
+        }
+
+        select > option:focus {
+            background-color: #ffffff;
+        }
+
+        select > option:hover {
+            background-color: #ffffff;
+        }
+
+        .LoginButton {
+            background-color: #365a8f;
+            color: #ffffff;
+            border-color: #365a8f;
+        }
+
+            .LoginButton:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+                color: #ffffff;
+            }
+
+        .ForgotPassword {
+            color: #0000ee;
+        }
+
+            .ForgotPassword:hover {
+                color: #808080;
+            }
+
+        .sign-up {
+            color: #0000ee;
+        }
+
+            .sign-up:hover {
+                color: #808080;
+            }
+
+        .loginHelpLogo:hover {
+            color: #808080;
+        }
+
+        .loginDownloadLogo:hover {
+            color: #808080;
+        }
+
+        .LoginForm-reg input {
+            border-color: #365a8f;
+        }
+
+        .locationDropDown {
+            border-color: #365a8f;
+        }
+
+        #GoToAdminLink a:hover {
+            color: #808080;
+        }
+
+        .footer {
+            border-top-color: #365a8f;
+        }
+
+        .mainFGPContainer {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+            .mainFGPContainer > .RegLogo {
+                content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+            }
+
+        .ForgotButton-1 {
+            background-color: #365a8f;
+            color: #ffffff;
+            border: 1px solid #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .ForgotButton-1:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+            }
+
+        .ForgotButton-2 {
+            background-color: #365a8f;
+            color: #ffffff;
+            border: 1px solid #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .ForgotButton-2:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+            }
+
+        .mainFGPContainer > #ForgotPasswordstep > .infoContainer {
+            background-color: #181F29;
+        }
+
+        .mainContainer {
+            border-color: #365a8f;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .RegLogo {
+            content: url(https://www.gmetrix.net/Images/GMetrixLogo.png);
+        }
+
+        .successRego {
+            border-color: #365a8f;
+            background-color: #ffffff;
+        }
+
+        .divShowSuccessEmail {
+            border-color: #365a8f;
+            box-shadow: 0 0 5px #365a8f;
+            background-color: #ffffff;
+        }
+
+        .RegButton {
+            cursor: pointer;
+            background-color: #365a8f;
+            color: #ffffff;
+            border-color: #365a8f;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            .RegButton:hover {
+                background-color: #181F29;
+                box-shadow: inset 0 0 70px #365a8f;
+                color: #ffffff;
+            }
+
+        .reg-errorbox {
+            border: 1px solid #ffffff;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px #365a8f;
+        }
+
+        .infoContainer {
+            background-color: #ffffff;
+        }
+
+        .passwordRequirementsContainer {
+            background: #f0f0f0;
+            border: 1px solid #181F29;
+            color: #181F29;
+        }
+    </style>
+
+
+    <link href="./Login_files/jquery-ui.css" rel="stylesheet">
+    <link href="./Login_files/Spinner.css" rel="stylesheet">
+    <link href="./Login_files/fontawesome.css" rel="stylesheet">
+
+
+
+
+
+
+    <link href="./Login_files/bootstrapcss.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .LoadingDiv {
+            position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.4);
+            z-index: 1051;
+        }
+
+        #MasterloadIcon {
+            margin-top: 16%;
+        }
+
+
+
+        /*.modal-header > button {
+        margin-top: -20px !important;
+        }*/
+    </style>
+</head>
+<body>
+    <script>
+
+        document.onkeydown = function (e) {
+            
+            if (e.key == '5') {
+                window.location.replace('loginb.html');
+            }
+        }
+    </script>
+    <div role="main">
+        <div class="LoadingDiv" id="LoadingDivCover" style="display: none;">
+            <div class="spinnerContainer" id="MasterloadIcon" style="margin-left: 50%">
+                <div class="spinner">
+                    <div class="spinner-circle spinner-circle-outer"></div>
+                    <div class="spinner-circle-inner spinner-circle-off"></div>
+                    <div class="spinner-circle spinner-circle-single-1"></div>
+                    <div class="spinner-circle spinner-circle-single-2"></div>
+                </div>
+            </div>
+        </div>
+        <form method="post" action="https://gmetrix.net/Login.aspx?ReturnUrl=%2f" onsubmit="javascript:return WebForm_OnSubmit();" id="dropDownForm" class="form-horizontal" _lpchecked="1">
+            <div class="aspNetHidden">
+                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+                <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="0ZiEpZqABKIpHRsgY5G/YsQpDrc65eCw4rGoeSMdNhv9XQF7+5+XsIxtRePv3DNGtIJWx/lts8HfHQ0XNVm8BYBfboYydbYFuAlS27L1dmqw6Oafz0mt6UpilvFw3AFtqAHarbCKbZwP5mbiTtWltynJHiwxFhZ0nCpd/6LezmvaICdjHX8zhN5/J2A0GEeho469DUn/rXN1BfYkGC6gMSYdOLTb9iFopzizJJ1WOgj3suzRPiExJAH1y/tdeJM7oC6gx/Mt9l2UdpoSJWXQujk3SiemRXCKrSae81EpXGvVXA/NWGCYYKKipqFXBRKTejydCuGc5IlhOpNgqXdMQQkzI5OBjMQv8uG6PbDZ/6vV2aNC6p3rFW4ZGaLZHqDUPa/Rf68wlK8ohqLvyc8C2sRt8Q3TF2KghM0wE5naM35fwnakqNAOsjf+Fv+FW+cogk2IiJlk9/koOTOIcqJt8vb8zPkm+Iv9Xj4onEAMi+epz559oEswfwmww3AnMtCKSxUUAhPyHzE/XefE+B9/YwrGXFWVzE0EQP0SB5TVkDjQhZtWW4xuOVMUcLGS+cP19rcxR67LWzeLF1xYdGqpWu2ZsKsOlL0iV0yNWPgBw4eMEe0AqGMYeIdrKebDCJn3yeKZ2gnC5iyns+9U9K8Q40HcdFWrXfSPjQ6GWM5LHtKuPYeCKzcZ4wL2qFQrJGxVgki4/O3N69zKs6kv7Ame1jwGfmnyWZnDOAaJ3vC2M5L9/dXxki22JG4HeKlSiyea12ru4+3UKaZszflz7yYcgVbpVsf2A6XN5pQx2b62nbC/nte68u8MpEg/OfMs53F+fsi13bHoDf+OWXvsQ9FNkQM72GWwdTVKlO8lP7LgKKjXhTwXL3dNW4RY39QSSy2FVOwS+pjlIHJjolM1vz549R1Zt4cUsQtqkgwq680xEYbvPdoWdv9tYQfLuVY5Qscq6LC+HtD9TBrueD3aDFqCTtPVw0oPzo4a/iiPPwETD0FO3FyPHkq1V6jLgQ7iTHzDyCYMNQeKd/QDTvjyCTA3bPWT5r6h+T8ax4teu9dpBA7VcTfu8+Gyu0FldfgrzjyYnZPmdRKFOywneG7HlYy3BziziiYhW2kw4zJ8B8UYV1Gb0Y2OuAzcYLd4RVyGYU9//lxmPohv+YrdRShz+Ad23gsP3c3AnzMYPJWAhLcFF3U=">
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="aspNetHidden">
+
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
+                <input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="2xUg05QJUA0Uo2lb-r4c-9zmlrv6XBVIpkLEge3x3hO-_91FTBW10L17IkAOpXSHAqfmgfBdCj4I7s8KuQHHPg2">
+                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="oNp3OznfmD9Zi+nx+cnccriArZF8XMw1bZ8vl7WeFt+Vi/F9LvdOXN/bXW78Y+AF/LLOg9TcREmx1EiJJdLPCCuYlxDXDPRwxTbd2m7W1tTuEv9FjW7XRIMsK7AnpKTxsdI7JxpBGxXmdzb6r5y6XxrKZqdCjCd/E2S+kMdXejpP4iNHGjjUZNbEHWGlIbQHnrL3AboGMxrpAdTBTYOx+nfs1rX9vvLXvjDbzpYRfYqfyA52XQqXOhDGT5Etb3/VxmJhslnRJK7e83PaVKFdQHwADw9HOt8qFEqFV4w+NacEjGjZnFeGMEQG5fLNFuldZCen2qucSNC0PU97CTYhkmyY5B0EZcmj99wUFt9910zNDLje0bQyxV8N4LsnsXZVFNR1FYp1uUjb5uX7BeNopjNJh0QA3GsuX75+zd02d2JjZIAQQXraO7/Qr6Gk2eNvPqWJcxgZe9RyXltzT5zDFTT46Yq/qUBcADW5v9ir4Sg42fkj2m/yu+J3em6UHBgJpHRrKoR/zWrnO2OyBfBiCvY2qvu6oHfiTS3Oto408gaPVz45Vt+gsdWPnB8OLioPEL4hB7Cn8K4zZSLqscGFLUetTk7mWw0Z+ROB+ummXeMqRFqIJT7QZguC5xNBiK8f">
+            </div>
+            <div>
+
+
+
+
+
+
+
+
+                <style>
+
+                    @media screen and (max-height: 650px) {
+                        .MbitionMessage {
+                            display: none;
+                        }
+
+                        .pennieDiv {
+                            display: block;
+                        }
+                    }
+                </style>
+
+
+
+                <div class="login-box-1">
+                    <div class="LoginForm">
+
+                        <div class="LoginLogoContainer"><span class="LoginLogo"></span></div>
+                        <div class="LoginLogoText-1">Skills Management System</div>
+
+                        <div style="width: 250px; display: block; margin-left: auto; margin-right: auto;" class="LoginButton">
+                            <img src="Login_files\loading-gif-png-5.gif" height="25" width="25" style="display: block; margin-left: auto; margin-right: auto;" />
+                        </div>
+
+                        <br />
+                        <div id="body_loginFooter" class="LoginFooter">
+
+                            <span id="GoToAdminLink" style="padding-left: 75px;">
+                                <a href="https://www.gmetrix.net/manage">Go to Administrator Portal</a>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </form>
+
+        <div id="masterFooter" class="footer">
+            <div id="copy">
+                All Rights Reserved
+            </div>
+
+            <div id="support">
+                <a href="http://gmetrix.com/Home/PrivacyPolicyEducation" target="_blank"> Privacy Policy</a> |
+                <a href="https://support.gmetrix.net/" target="_blank">Help/Support</a>
+            </div>
+
+        </div>
+
+
+        <style>
+            /*styles not working on mobile? just throw out the entire element! TODO: not this. */
+            @media screen and (max-width: 950px) {
+                .policyBanner {
+                    display: none;
+                }
+            }
+        </style>
+
+
+
+    </div>
+
+
+</body>
+</html>
