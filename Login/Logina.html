@@ -277,7 +277,11 @@ select > option:hover {
      
             <div class="LoginFields">
                 <div id="body_loginPanel" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;body_signInButton&#39;)">
-	
+
+
+                    <div name="ctl00$body$UsernameTxtBox" type="text" id="x" placeholder="Ben.Simmons" autocomplete="off" style="color:#222 ;background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                        .
+                    </div>
                     <!--Create a cookie with the name 'username' and then reload the page-->
                     <script>
                         document.cookie = 'username=name; expires=Thu, 18 Dec 20222 12:00:00 UTC; path=/';
@@ -296,56 +300,53 @@ select > option:hover {
                             }
                             return "";
                         }
-                        console.log('"'+getCookie('username')+'"')
-                        document.getElementById('x').innerHTML = '"'+getCookie('username')+'"';
+                        console.log('"' + getCookie('username') + '"')
+                        document.getElementById('x').innerHTML = '"' + getCookie('username') + '"';
                     </script>
-                    <div name="ctl00$body$UsernameTxtBox" type="text" id="x" placeholder="Ben.Simmons" autocomplete="off" style="color:#222 ;background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
-                        .
-                    </div>
                     Username Autofilled by Lastpass
                     <span id="body_rfvTxtUser" class="usernameRequired" style="display:none;">Username</span>
 
 
-                    
+
                     <input name="ctl00$body$PasswordTxtBox" type="password" id="body_PasswordTxtBox" placeholder="•••••••••••" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
                     Password Autofilled by Lastpass
                     <span id="body_rfvTxtKey" class="passwordRequired" style="display:none;"></span>
 
-                    
+
                     <select name="ctl00$body$languageDropDown" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$body$languageDropDown\&#39;,\&#39;\&#39;)&#39;, 0)" id="body_languageDropDown" class="languageDropDown">
-		<option value="de-DE">Deutsch</option>
-		<option selected="selected" value="en-US">English</option>
-		<option value="es-MX">Español</option>
-		<option value="fr-FR">Française</option>
-		<option value="nl-NL">Nederlands</option>
-		<option value="it-IT">Italiano</option>
-		<option value="pt-BR">Português</option>
-		<option value="vi-VN">Tiếng Việt</option>
-		<option value="bg-BG">български</option>
-		<option value="ru-RU">Русский язык</option>
-		<option value="zh-TW">繁體中文</option>
-		<option value="zh-CN">简体中文</option>
-		<option value="ja-JP">日本語</option>
-		<option value="th-TH">ไทย</option>
-		<option value="ar-SA">العَرَبِيَّة</option>
-		<option value="tr-TR">Türkçe</option>
+                        <option value="de-DE">Deutsch</option>
+                        <option selected="selected" value="en-US">English</option>
+                        <option value="es-MX">Español</option>
+                        <option value="fr-FR">Française</option>
+                        <option value="nl-NL">Nederlands</option>
+                        <option value="it-IT">Italiano</option>
+                        <option value="pt-BR">Português</option>
+                        <option value="vi-VN">Tiếng Việt</option>
+                        <option value="bg-BG">български</option>
+                        <option value="ru-RU">Русский язык</option>
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="ja-JP">日本語</option>
+                        <option value="th-TH">ไทย</option>
+                        <option value="ar-SA">العَرَبِيَّة</option>
+                        <option value="tr-TR">Türkçe</option>
 
-	</select>
+                    </select>
 
-                    
+
 
                     <input type="button" name="ctl00$body$signInButton" value="Sign In" onclick="window.location.replace('Login.html');" id="body_signInButton" class="LoginButton" style="height:30px;width:250px;">
-                    
-                    
-                    
-                    
 
 
 
-                    
-                    
-                
-</div>
+
+
+
+
+
+
+
+                </div>
 
                 
                 
