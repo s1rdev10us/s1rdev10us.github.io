@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Open Graph Grabber</title>
+</head>
+<body>
+    <form id="frm1" >
+        Url to grab "Open graph": <input type="text" name="fname" value="Donald"><br>
+        
+    </form>
+    <button onclick="myFunction()">Try it</button>
+    <div id="demo"></div>
+    <script>
+        function grabMetas(rawHTML) {
+            //var rawHTML = input.rawHTML;
+            //var rawHTML = '            <meta content = "S1rDev10us.github.io" property = "og:title" />            < meta content = "This is S1rDev10us\'s Website" property = "og:description" />    <meta content="s1rdevi0us.github.io" property="og:url" />    <meta content="images/ROFL_Waffle.gif" property="og:image" />    <meta content="#43B581" data-react-helmet="true" name="theme-color" />    <embed src="https://s1rdev10us.github.io"><embed src="s1rdev10us.github.io">    ';
+            var HTMLlength = rawHTML.length;
+            var metas = rawHTML.split(">");
+            var testString = "This is a <body>Test String for Regex</body>";
+            for (var i = 0; i < metas.length; i++) {
+                metas[i] = metas[i] + ">";
+            }
+            console.log(metas)
+        }
+       
+        
+
+        function myFunction() {
+            var x = document.getElementById("frm1");
+            var text = "";
+            var i;
+            for (i = 0; i < x.length; i++) {
+                text += x.elements[i].value;
+            }
+            document.getElementById("demo").innerHTML = text;
+            console.log(text);
+            const xhr = new XMLHttpRequest();
+            const url = text;
+            function someHandler(x) {
+                console.log(x);
+            }
+            xhr.open('GET', url);
+            xhr.onreadystatechange = someHandler;
+            xhr.send();
+
+            fetch(text, {
+                headers: {
+                    'mode': 'no-cors',
+                    'content-type': 'text/plain',
+                    'method':'HEAD'
+                },
+                
+            })
+                .then(response => response.text())
+                .then(data => console.log(data));
+            myFetch(text);
+
+        }
+
+        async function myFetch(url) {
+            let response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            let text = await response.text(); // await ensures variable has fulfilled Promise
+            console.log(text);
+            return text;
+        }
+    </script>
+</body>
+</html>
