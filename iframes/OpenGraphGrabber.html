@@ -36,14 +36,14 @@
             }
             document.getElementById("demo").innerHTML = text;
             console.log(text);
-            const xhr = new XMLHttpRequest();
-            const url = text;
-            function someHandler(x) {
-                console.log(x);
-            }
-            xhr.open('HEAD', url);
-            xhr.onreadystatechange = someHandler;
-            xhr.send();
+            //const xhr = new XMLHttpRequest();
+            //const url = text;
+            //function someHandler(x) {
+            //    console.log(x);
+            //}
+            //xhr.open('HEAD', url);
+            //xhr.onreadystatechange = someHandler;
+            //xhr.send();
 
             fetch(text, {
                 headers: {
@@ -55,7 +55,7 @@
             })
                 .then(response => response.text())
                 .then(data => console.log(data));
-            myFetch(text);
+            //myFetch(text);
 
         }
 
