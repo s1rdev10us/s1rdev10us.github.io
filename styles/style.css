@@ -15,7 +15,9 @@ body {
     color:aqua;
 
 }
-
+html {
+    scroll-behavior:smooth;
+}
 textarea {
     background-image: url(../images/footer_lodyasDarktoLight.png);
 }
