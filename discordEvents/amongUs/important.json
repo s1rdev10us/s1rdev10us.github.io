@@ -1,0 +1,10 @@
+{
+  "type": "link",
+  "version": "1.0",
+
+  "provider_name": "Discord",
+  "provider_url": "https://Discord.com",
+
+  "author_name": "https://Discord.com",
+  "author_url": "https://Discord.com"
+}
