@@ -1,0 +1,22 @@
+@keyframes rainbow{
+    from {background-color:#0000FF;}
+    33.33% {background-color:#FF0000;}
+    66.66% {background-color:#00FF00;}
+    to {background-color: #0000FF;}
+}
+
+
+.rainbow {
+    background:red;
+    height:100%;
+    width:100%;
+}
+.rainbow-fast {
+    animation: rainbow 2.5s linear infinite;
+}
+.rainbow-medium {
+    animation: rainbow 5s linear infinite;
+}
+.rainbow-slow {
+    animation:rainbow 10s linear infinite;
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <html lang="en">
 
@@ -179,6 +179,88 @@
 
         <br />
         <textarea id="TextArea1" rows="2" cols="20" placeholder="TextArea">TextArea</textarea>
+        <br />
+        <style>
+            @keyframes move {
+                from {
+                    left: 0px;
+                    top: 0%;
+                }
+
+                50% {
+                    left: 100%;
+                    top: 0%;
+                }
+
+                to {
+                    left: 0px;
+                    top: 0%;
+                }
+            }
+
+            @keyframes rainbow {
+                from {
+                    background-color: #FF0000
+                }
+
+                33% {
+                    background-color: #00FF00
+                }
+
+                66% {
+                    background-color: #0000FF
+                }
+
+                to {
+                    background-color: #FF0000
+                }
+            }
+
+            .move.circle {
+                
+                animation: move var(--time) linear infinite;
+                position: relative;
+                width: 10px;
+                height: 10px;
+                border: 3px solid transparent;
+                border-radius: 10px;
+                background-clip: padding-box;
+            }
+
+            .rainbow {
+                animation: rainbow 5s linear infinite;
+                width: 100%;
+                height: 100%;
+                border: 3px solid transparent;
+                border-radius: 10px;
+                background-clip: padding-box;
+            }
+        </style>
+        <div class="slidecontainer">
+            <input style="height:10px;" step="0.05" type="range" min="0.1" max="5" value="10" class="" id="myRange">
+        </div>
+        <div id="circle-move" class="circle move">
+            <div class="rainbow"></div>
+        </div>
+        <div style="background-color:deepskyblue" id="circle-move" class="circle move">
+            
+        </div>
+        <script>
+
+            var slider = document.getElementById("myRange");
+            var output = document.querySelector('.move.circle');
+            output = document.querySelector(':root');
+            var r = document.getElementById('circle-move');
+            //setInterval(function () { var rs = getComputedStyle(r); console.log(rs.getPropertyValue('--time')); }, 1000)
+            //console.log(slider)
+            // Update the current slider value (each time you drag the slider handle)
+            slider.addEventListener('change', function () {
+                //console.log()
+                var value = (5.1 - this.value) + 's'
+                output.style.setProperty('--time', value);
+            })
+        </script>
+
         <br />
         <div>
             <hr />

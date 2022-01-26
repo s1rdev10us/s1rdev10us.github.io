@@ -12,6 +12,6 @@ function myTimer() {
 			online = navigator.onLine;
         }
 	}
-	console.log(navigator.onLine);
+	//console.log(navigator.onLine);
 
 }
