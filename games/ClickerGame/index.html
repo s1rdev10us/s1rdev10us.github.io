@@ -1,0 +1,196 @@
+﻿
+<html>
+<head>
+	<link rel="stylesheet" href="../../styles/style.css" />
+	<link rel="shortcut icon" href="../../images/boss.png" />
+	<title>Clicker game (TBN)</title>
+	<style>
+		.grid {
+			display: grid;
+			grid-gap: 0px;
+			margin: 0px;
+			padding: 0px;
+			border: 0px;
+			height: 100%;
+			width: 100%;
+			
+		}
+		.grid.boss {
+			grid-template:
+				'sky sky sky'
+				'sky sky sky'
+				'left boss right'
+				'left boss right'
+				'left boss right'
+				'left boss right'
+				'left boss right'
+				'left boss right'
+				'floor-left damage floor-right'
+				'floor floor floor';
+		}
+		.grid.main {
+			grid-template:
+				'header header header header header header'
+				'boss boss main main right right'
+				'boss boss main main right right'
+				'boss boss main main right right'
+				'boss boss main main right right'
+				'boss boss footer footer footer footer';
+		}
+		.boss:focus {
+			border:none;
+		}
+		.boss:focus-visible {
+			outline: none;
+		}
+		.boss {
+			grid-area: boss;
+		}
+		button.boss {
+			cursor: url('../../cursor/Target.png'),crosshair;
+			background-position: center;
+			border: none;
+			background-image: url('../../images/boss.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		.item2 {
+			grid-area: menu;
+		}
+
+		.item3 {
+			grid-area: main;
+		}
+
+		.item4 {
+			grid-area: right;
+		}
+
+		.item5 {
+			grid-area: footer;
+		}
+	</style>
+</head>
+<body>
+	<!--div id="grid" class="grid">
+		<div class="grid-item column-small row-large">1</div>
+		<div class="grid-item column-medium row-small">2</div>
+		<div class="grid-item column-small row-medium">3</div>
+		<div class="grid-item column-small row-small">4</div>
+		<div class="grid-item column-small row-small">5</div>
+	</div-->
+	<div class="grid main">
+		<div class="item1"><button onclick="if (confirm('Are you sure you want to delete your save game?')) { if (prompt('Please enter the word DELETE in full caps if you are SURE you want to delete your save file') == 'DELETE') { stats = defaultStats; } }">Delete save game</button></div>
+		<div class="boss">
+			
+			<div class="grid boss">
+				<button tabindex="-1" title="Boss" onclick="boss(a);" class="boss"></button>
+				<div id="damage" style="text-align:center;grid-area:damage"></div>
+			</div>
+		</div>
+		<div class="item3">Main</div>
+		<div class="item4">Right</div>
+		<div class="item5">Footer</div>
+	</div>
+	<div>
+		<!--Cookie functions-->
+		<script>
+			function getCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(';');
+				for (let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+
+			function setCookie(cname, cvalue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+				let expires = "expires=" + d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/clickerGame";
+			}
+		</script>
+		<!--Number function-->
+		<script>
+			function nFormatter(num, digits) {
+				const lookup = [
+					{ value: 1, symbol: "" },
+					{ value: 1e3, symbol: "k" },
+					{ value: 1e6, symbol: "M" },
+					{ value: 1e9, symbol: "B" },
+					{ value: 1e12, symbol: "T" },
+					{ value: 1e15, symbol: "P" },
+					{ value: 1e18, symbol: "E" },
+					{ value: 1e21, symbol: "Z" },
+					{ value: 1e24, symbol: "Y" }
+				];
+				const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+				var item = lookup.slice().reverse().find(function (item) {
+					return num >= item.value;
+				});
+				
+				return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
+				
+			}
+		</script>
+		<!--Variables-->
+		<script>
+			const defaultStats = { 'settings': {'refreshRate':500}, 'gameState': { 'damage': 0 }, 'stats': { 'start': new Date().getTime() } }
+			var stats=getCookie('stats')
+			if (stats.length < 1) {
+				stats = defaultStats
+			} else {
+				stats = JSON.parse(stats);
+			}
+		</script>
+		<script>
+			const a = 'ke₊⁈⏔₻⁅—℉’‸”‷⁔✕✕✓⁝…‼µ^⁇º⌁⌂⁒₡₱₽₱૱₤ÄÂǎɐÔÔøɼɾʅţþʧʨů↹↲↲⇏⇏⇌▥⇺⇱▸◅●y';
+			var clicked = false;
+			function boss(keu) {
+				if (keu == a) {
+					clicked = true;
+				} else {
+					console.log();
+				}
+			}
+		</script>
+		<!--Repeated Stuff-->
+		<script>
+			console.log(stats);
+			var recentnum = '';
+			function refresh() {
+				const newnum = nFormatter(stats['gameState']['damage'], 2);
+				if (recentnum != newnum) {
+					document.getElementById('damage').innerHTML = newnum;
+					recentnum = newnum;
+				}
+			}
+			function autoClickerPrevention() {
+				if (clicked) {
+					clicked = false;
+					stats['gameState']['damage'] += 1;
+				}
+			}
+			function save() {
+				stats['stats']['recentPlaytime'] = new Date().getTime()
+				setCookie('stats', JSON.stringify(stats), 360000000);
+			}
+			//Autoclicker prevention methods
+			setInterval(autoClickerPrevention,70)
+			//Refresh the page
+			setInterval(refresh, stats['settings']['refreshSpeed'])
+			//Autosave
+			setInterval(save,1000)
+		</script>
+	</div>
+	
+</body>
+</html>
