@@ -105,11 +105,11 @@ Sorry but the page you were trying to access a page on my website that does not 
 	  <h1>404</h1>
 	  <p><strong>File not found</strong></p>
 		<p><strong>You</strong> have visited this page <strong id="visit">(Sorry, there was an error and the code did not run)</strong> time<span id="plural">s</span></p>
-		<div id="script">
-			<script>
+		<div>
+			<script id="script">
 				//console.log(outerHTML);
 				//console.log(this);
-				//document.getElementById('script').remove();
+				document.getElementById('script').remove();
 				function getCookie(cname) {
 					let name = cname + "=";
 					let decodedCookie = decodeURIComponent(document.cookie);
