@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="../../styles/style.css" />
 	<link rel="shortcut icon" href="../../images/boss.png" />
+	<!--link rel="stylesheet" href="../../images/boss.css" /-->
 	<title>Clicker game (TBN)</title>
 	<style>
 		.grid {
@@ -51,6 +52,7 @@
 			background-position: center;
 			border: none;
 			background-image: url('../../images/boss.png');
+
 			background-repeat: no-repeat;
 			background-size: contain;
 		}
@@ -80,7 +82,7 @@
 		<div class="grid-item column-small row-small">5</div>
 	</div-->
 	<div class="grid main">
-		<div class="item1"><button onclick="if (confirm('Are you sure you want to delete your save game?')) { if (prompt('Please enter the word DELETE in full caps if you are SURE you want to delete your save file') == 'DELETE') { stats = defaultStats; } }">Delete save game</button></div>
+		<div class="item1"><button onclick="if (confirm('Are you sure you want to delete your save game?')) { if (prompt('Please enter the word DELETE in full caps if you are SURE you want to delete your save file') == 'DELETE') { stats.reset(); } }">Delete save game</button></div>
 		<div class="boss">
 			
 			<div class="grid boss">
@@ -146,15 +148,19 @@
 		</div>
 		<!--Load from cookies-->
 		<script>
-			const defaultStats = { 'settings': {'refreshRate':500}, 'gameState': { 'damage': 0,'units':'' }, 'stats': { 'start': new Date().getTime(),'recentPlaytime':new Date().getTime() } }
+			const defaultStats = { 'settings': { 'refreshRate': 500 }, 'gameState': { 'damage': 0, 'units': '' }, 'stats': { 'start': new Date().getTime(), 'recentPlaytime': new Date().getTime() } };
 			var stats = getCookie('stats')
 			var starterStats = {};
 			if (stats.length < 1) {
-				stats = defaultStats				
+				stats = defaultStats
 			} else {
 				stats = JSON.parse(stats);
 			}
-			starterStats = stats
+			starterStats = stats;
+			stats.reset = function () {
+				stats = defaultStats;
+			}
+
 
 		</script>
 		<script>
