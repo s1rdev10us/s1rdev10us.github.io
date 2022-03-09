@@ -13,5 +13,8 @@ function myTimer() {
         }
 	}
 	//console.log(navigator.onLine);
-
+	
+	 
+	 
+	 
 }

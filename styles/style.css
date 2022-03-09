@@ -1,64 +1,64 @@
 body {
-    background-color: #222;
-    color: aqua;
-    scrollbar-base-color: aqua;
-    background-clip: padding-box;
-    -webkit-background-clip: padding-box;
-    border: 3px solid transparent;
-    border-radius: 5px
+	background-color: #222;
+	color: aqua;
+	scrollbar-base-color: aqua;
+	background-clip: padding-box;
+	-webkit-background-clip: padding-box;
+	border: 3px solid transparent;
+	border-radius: 5px
 }
 .light-mode{
-    background-color:white;
-    color:black;
+	background-color:white;
+	color:black;
 }
 * {
-    color:aqua;
+	color:aqua;
 
 }
 html {
-    scroll-behavior:smooth;
+	scroll-behavior:smooth;
 }
 textarea {
-    background-image: url(../images/footer_lodyasDarktoLight.png);
+	background-image: url(../images/footer_lodyasDarktoLight.png);
 }
 footer {
-    background-image: url(../images/footer_lodyasDarktoLight.png);
-    color: white;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    outline-color: cyan;
-    outline-style: solid;
+	background-image: url(../images/footer_lodyasDarktoLight.png);
+	color: white;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	outline-color: cyan;
+	outline-style: solid;
 }
 .headerbutton {
-    color: darkred;
-    background-color: black;
-    outline-color: black;
-    border-color: black;
-    border: double;
-    
-    
-    outline-style: solid;
-    
+	color: darkred;
+	background-color: black;
+	outline-color: black;
+	border-color: black;
+	border: double;
+	
+	
+	outline-style: solid;
+	
 }
 
 select {
-    background-color: #222;
-    color: white;
+	background-color: #222;
+	color: white;
 }
 option {
-    color: white
+	color: white
 }
 input {
-    background-color: #222;
-    color: white
+	background-color: #222;
+	color: white
 }
 button {
-    background-color: #222;
-    border: inset;
-    border-color: dodgerblue;
+	background-color: #222;
+	border: inset;
+	border-color: dodgerblue;
 }
  .button:hover{
-     background-color:#333;
+	 background-color:#333;
  }
