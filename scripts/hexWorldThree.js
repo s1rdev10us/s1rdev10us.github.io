@@ -30,12 +30,16 @@ let envmap;
 
 	let sphereMesh = new Mesh(
 		new SphereGeometry(5, 10, 10),
-		new MeshBasicMaterial({ color: 0xff0000 })
+		new MeshBasicMaterial({
+			envMap: envmap,
+			roughness: 0,
+			metalness:1,
+		})
 	);
 	scene.add(sphereMesh);
 
 	renderer.setAnimationLoop(() => {
-		//controls.update();
+		controls.update();
 		renderer.render(scene, camera);
 	});
 })();
