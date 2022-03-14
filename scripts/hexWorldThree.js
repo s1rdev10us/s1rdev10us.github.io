@@ -1,0 +1,41 @@
+import { FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, SphereGeometry, MeshBasicMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
+import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
+
+const scene = new Scene();
+scene.background = new Color("#222222");
+
+const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
+//camera.position.set(-17, 31, 33);
+camera.position.set(0, 0, 50);
+
+const renderer = new WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = ACESFilmicToneMapping;
+renderer.outputEncoding = sRGBEncoding;
+renderer.physicallyCorrectLights = true;
+document.body.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, 0);
+controls.dampingFactor = 0.05;
+controls.enableDamping = true;
+
+let envmap;
+
+(async function () {
+	let pmrem = new PMREMGenerator(renderer);
+	let envmapTexture = await new RGBELoader().setDataType(FloatType).loadAsync("./assets/envmap.hdr");
+	envmap = pmrem.fromEquirectangular(envmapTexture).texture;
+
+	let sphereMesh = new Mesh(
+		new SphereGeometry(5, 10, 10),
+		new MeshBasicMaterial({ color: 0xff0000 })
+	);
+	scene.add(sphereMesh);
+
+	renderer.setAnimationLoop(() => {
+		//controls.update();
+		renderer.render(scene, camera);
+	});
+})();
