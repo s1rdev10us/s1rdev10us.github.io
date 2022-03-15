@@ -1,4 +1,4 @@
-import { Vector2, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshBasicMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshBasicMaterial } from 'https://cdn.skypack.dev/three@0.137';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
@@ -53,6 +53,7 @@ let hexagonGeometries = new BoxGeometry(0, 0, 0);
 function hexGeometry(height, position) {
 	let geo = new CylinderGeometry(1, 1, height, 6, 1, false);
 	geo.translate(position.x, height * 0.5, position.y);
+
 	return geo;
 }
 

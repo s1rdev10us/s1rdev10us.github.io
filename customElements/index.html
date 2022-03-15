@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+	<title>Click-Me</title>
+</head>
+<body>
+	<click-me>
+		Click Me
+	</click-me>
+	<script type="module" src="../scripts/customElements/click-me.js"></script>
+	<script>
+		document.currentScript.remove();
+		console.log('this was executed through a script that cannot be seen on this page');
+	</script>
+</body>
+</html>
