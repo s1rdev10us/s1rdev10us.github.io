@@ -32,10 +32,10 @@ let envmap;
 
 	//for (let i = -10; i <= 10; i++) {
 		//for (let j = -10; j <= 10; i++) {
-			makeHex(3, new Vector2(i,j));
+			//makeHex(3, new Vector2(i,j));
 		//}
 	//}
-
+	makeHex(3, new Vector2(0, 0));
 	let hexagonMesh = new Mesh(
 		hexagonGeometries,
 		new MeshStandardMaterial({
