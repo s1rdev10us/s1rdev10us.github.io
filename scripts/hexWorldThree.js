@@ -30,11 +30,11 @@ let envmap;
 	let envmapTexture = await new RGBELoader().setDataType(FloatType).loadAsync("./assets/envmap.hdr");
 	envmap = pmrem.fromEquirectangular(envmapTexture).texture;
 
-	for (let i = -10; i <= 10; i++) {
-		for (let j = -10; j <= 10; i++) {
+	//for (let i = -10; i <= 10; i++) {
+		//for (let j = -10; j <= 10; i++) {
 			makeHex(3, new Vector2(i,j));
-		}
-	}
+		//}
+	//}
 
 	let hexagonMesh = new Mesh(
 		hexagonGeometries,
