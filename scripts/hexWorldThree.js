@@ -32,8 +32,6 @@ let envmap;
 
 	for (let i = -10; i <= 20; i++) {
 		for (let j = -10; j <= 20; i++) {
-			console.log(i);
-			console.log(j);
 			makeHex(3, new Vector2(i,j));
 		}
 	}
