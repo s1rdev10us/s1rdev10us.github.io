@@ -32,11 +32,12 @@ let envmap;
 
 	const simplex = new SimplexNoise();
 
-	for (var i = -10; i <= 10; i++) {
-		for (var j = -10; j <= 10; j++) {
+	for (var i = -15; i <= 15; i++) {
+		for (var j = -15; j <= 15; j++) {
 			let position = tileToPosition(i, j);
 
 			if (position.length() > 16) continue;
+
 			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
 
