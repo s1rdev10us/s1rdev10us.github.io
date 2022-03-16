@@ -9,7 +9,7 @@ scene.background = new Color("#222222");
 
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
 camera.position.set(-17, 31, 33);
-//camera.position.set(0, 0, 50);
+//camera.position.set(0, 0, 50)
 
 const renderer = new WebGLRenderer({ antialias: true });
 renderer.setSize(innerWidth, innerHeight);
