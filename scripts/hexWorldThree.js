@@ -236,8 +236,8 @@ function clouds() {
 		const puff3 = new SphereGeometry(0.9, 7, 7);
 
 		puff1.translate(-1.85, Math.random() * 0.3, 0);
-		puff1.translate(0, Math.random() * 0.3, 0);
-		puff1.translate(1.85, Math.random() * 0.3, 0);
+		puff2.translate(0, Math.random() * 0.3, 0);
+		puff3.translate(1.85, Math.random() * 0.3, 0);
 
 		const cloudGeo = mergeBufferGeometries([puff1, puff2, puff3]);
 		cloudGeo.translate(
