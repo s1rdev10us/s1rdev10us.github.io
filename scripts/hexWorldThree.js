@@ -1,4 +1,4 @@
-import { PointLight, PCFSoftShadowMap, TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { SphereGeometry, PointLight, PCFSoftShadowMap, TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
@@ -82,7 +82,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 
 	let seaMesh = new Mesh(
-		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2+0.1, 50),
+		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2, 50),
 		new MeshPhysicalMaterial({
 			envMap: envmap,
 			color: new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3),
@@ -100,6 +100,34 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	seaMesh.recieveShadow = true;
 	seaMesh.position.set(0, MAX_HEIGHT * 0.1, 0);
 	scene.add(seaMesh);
+
+
+	let mapContainer = new Mesh(
+		new CylinderGeometry(17.1, 17.1, MAX_HEIGHT * 0.25, 50, 1, true),
+		new MeshPhysicalMaterial({
+			envMap: envmap,
+			map: textures.dirt,
+			envMapIntensity: 0.2,
+			side: DoubleSide
+		})
+	);
+	mapContainer.recieveShadow = true;
+	mapContainer.position.set(0, MAX_HEIGHT * 0.125, 0);
+	scene.add(mapContainer);
+
+
+	let mapFloor = new Mesh(
+		new CylinderGeometry(18.5, 18.5, MAX_HEIGHT * 0.1, 50),
+		new MeshPhysicalMaterial({
+			envMap: envmap,
+			map: textures.dirt2,
+			envMapIntensity: 0.1,
+			side:DoubleSide
+		})
+	);
+	mapFloor.recieveShadow = true;
+	mapFloor.position.set(0, -MAX_HEIGHT * 0.05, 0);
+	scene.add(mapFloor);
 
 
 	renderer.setAnimationLoop(() => {
@@ -132,6 +160,9 @@ function makeHex(height, position) {
 
 	if (height > STONE_HEIGHT) {
 		stoneGeo = mergeBufferGeometries([geo, stoneGeo]);
+		if (Math.random() > 0.8) {
+			stoneGeo = mergeBufferGeometries([geo, stone(height,position)]);
+		}
 	} else if (height > DIRT_HEIGHT) {
 		dirtGeo = mergeBufferGeometries([geo, dirtGeo]);
 	} else if (height > GRASS_HEIGHT) {
@@ -156,4 +187,14 @@ function hexMesh(geo, map) {
 	mesh.recieveShadow = true;
 
 	return mesh;
+}
+
+function stone(height, position) {
+	const px = Math.random() * 0.4;
+	const pz = Math.random() * 0.4;
+
+	const geo = new SphereGeometry(Math.random() * 0.3 + 0.1, 7, 7);
+	geo.translate(position.x + px, height, position.y + pz);
+
+	return geo;
 }
