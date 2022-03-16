@@ -2,14 +2,14 @@ import { Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, 
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
-
+import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
 
 const scene = new Scene();
 scene.background = new Color("#222222");
 
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
-//camera.position.set(-17, 31, 33);
-camera.position.set(0, 0, 50);
+camera.position.set(-17, 31, 33);
+//camera.position.set(0, 0, 50);
 
 const renderer = new WebGLRenderer({ antialias: true });
 renderer.setSize(innerWidth, innerHeight);
@@ -30,13 +30,18 @@ let envmap;
 	let envmapTexture = await new RGBELoader().setDataType(FloatType).loadAsync("./assets/envmap.hdr");
 	envmap = pmrem.fromEquirectangular(envmapTexture).texture;
 
+	const simplex = new SimplexNoise();
+
 	for (var i = -10; i <= 10; i++) {
 		for (var j = -10; j <= 10; j++) {
 			let position = tileToPosition(i, j);
 
 			if (position.length() > 16) continue;
 
-			makeHex(3, position);
+			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
+			noise = Math.pow(noise, 1.5);
+
+			makeHex(noise, position);
 		}
 	}
 	
