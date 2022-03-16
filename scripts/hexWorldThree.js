@@ -32,7 +32,7 @@ let envmap;
 
 	for (var i = -10; i <= 10; i++) {
 		for (var j = -10; j <= 10; j++) {
-			makeHex(3, new Vector2(i,j));
+			makeHex(3, tileToPosition(i,j));
 		}
 	}
 	
@@ -51,6 +51,10 @@ let envmap;
 	});
 })();
 
+
+function tileToPosition(tileX, tileY) {
+	return new Vector2((tileX + (tileY % 2) * 0.5) * 1.77, tileY * 1.535);
+}
 
 
 let hexagonGeometries = new BoxGeometry(0, 0, 0);
