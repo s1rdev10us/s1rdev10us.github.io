@@ -82,7 +82,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 
 	let seaMesh = new Mesh(
-		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2, 50),
+		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2+0.1, 50),
 		new MeshPhysicalMaterial({
 			envMap: envmap,
 			color: new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3),
