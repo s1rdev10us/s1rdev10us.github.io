@@ -1,4 +1,4 @@
-import { Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshBasicMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
@@ -25,10 +25,26 @@ controls.enableDamping = true;
 
 let envmap;
 
+const MAX_HEIGHT = 10;
+const STONE_HEIGHT = MAX_HEIGHT * 0.8;
+const DIRT_HEIGHT = MAX_HEIGHT * 0.7;
+const GRASS_HEIGHT = MAX_HEIGHT * 0.5;
+const SAND_HEIGHT = MAX_HEIGHT * 0.3;
+const DIRT2_HEIGHT = MAX_HEIGHT * 0;
+
 (async function () {
 	let pmrem = new PMREMGenerator(renderer);
 	let envmapTexture = await new RGBELoader().setDataType(FloatType).loadAsync("./assets/envmap.hdr");
 	envmap = pmrem.fromEquirectangular(envmapTexture).texture;
+
+	let textures = {
+		dirt: await new TextureLoader().loadAsync("./assets/dirt.png"),
+		dirt2: await new TextureLoader().loadAsync("./assets/dirt2.jpg"),
+		grass: await new TextureLoader().loadAsync("./assets/grass.jpg"),
+		sand: await new TextureLoader().loadAsync("./assets/sand.jpg"),
+		water: await new TextureLoader().loadAsync("./assets/water.jpg"),
+		stone: await new TextureLoader().loadAsync("./assets/stone.png"),
+	};
 
 	const simplex = new SimplexNoise();
 
@@ -41,18 +57,16 @@ let envmap;
 			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
 
-			makeHex(noise*10, position);
+			makeHex(noise*MAX_HEIGHT, position);
 		}
 	}
-	
-	let hexagonMesh = new Mesh(
-		hexagonGeometries,
-		new MeshStandardMaterial({
-			envMap: envmap,
-			flatShading: true,
-		})
-	);
-	scene.add(hexagonMesh);
+
+	let stoneMesh = hexMesh(stoneGeo, textures.stone);
+	let grassMesh = hexMesh(grassGeo, textures.grass);
+	let dirt2Mesh = hexMesh(dirt2Geo, textures.dirt2);
+	let dirtMesh = hexMesh(dirtGeo, textures.dirt);
+	let sandMesh = hexMesh(sandGeo, textures.sand);
+	scene.add(stoneMesh, dirtMesh, dirt2Mesh, sandMesh, grassMesh);
 
 	renderer.setAnimationLoop(() => {
 		controls.update();
@@ -66,7 +80,11 @@ function tileToPosition(tileX, tileY) {
 }
 
 
-let hexagonGeometries = new BoxGeometry(0, 0, 0);
+let stoneGeo = new BoxGeometry(0, 0, 0);
+let dirtGeo = new BoxGeometry(0, 0, 0);
+let dirt2Geo = new BoxGeometry(0, 0, 0);
+let sandGeo = new BoxGeometry(0, 0, 0);
+let grassGeo = new BoxGeometry(0, 0, 0);
 
 function hexGeometry(height, position) {
 	let geo = new CylinderGeometry(1, 1, height, 6, 1, false);
@@ -77,5 +95,30 @@ function hexGeometry(height, position) {
 
 function makeHex(height, position) {
 	let geo = hexGeometry(height, position);
-	hexagonGeometries = mergeBufferGeometries([hexagonGeometries, geo]);
+
+	if (height > STONE_HEIGHT) {
+		stoneGeo = mergeBufferGeometries([geo, stoneGeo]);
+	} else if (height > DIRT_HEIGHT) {
+		dirtGeo = mergeBufferGeometries([geo, dirtGeo]);
+	} else if (height > GRASS_HEIGHT) {
+		grassGeo = mergeBufferGeometries([geo, grassGeo]);
+	} else if (height > SAND_HEIGHT) {
+		sandGeo = mergeBufferGeometries([geo, sandGeo]);
+	} else if (height > DIRT2_HEIGHT) {
+		dirt2Geo = mergeBufferGeometries([geo, dirt2Geo]);
+	}
+}
+
+function hexMesh(geo, map) {
+	let mat = new MeshPhysicalMaterial({
+		envMap: envmap,
+		envMapIntensity: 1,
+		//envMapIntensity: 0.135,
+		flatShading: true,
+		map
+	});
+
+	let mesh = new Mesh(geo, mat);
+
+	return mesh;
 }
