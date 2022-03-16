@@ -20,7 +20,7 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
-const light = new PointLight(new Color("#FFCB8E").convertSRGBToLinear(), 80, 200)
+const light = new PointLight(new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear(), 80, 200)
 light.position.set(10, 20, 10)
 
 light.castShadow = true;
@@ -79,6 +79,27 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	let dirtMesh = hexMesh(dirtGeo, textures.dirt);
 	let sandMesh = hexMesh(sandGeo, textures.sand);
 	scene.add(stoneMesh, dirtMesh, dirt2Mesh, sandMesh, grassMesh);
+
+
+	let seaMesh = new Mesh(
+		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2, 50),
+		new MeshPhysicalMaterial({
+			envMap: envmap,
+			color: new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3),
+			ior: 1.4,
+			transmission: 1,
+			transparent: true,
+			thickness: -1.5,
+			envMapIntensity: 0.2,
+			roughness: 1,
+			metalness: 0.025,
+			roughnessMap: textures.water,
+			metalnessMap: textures.water
+		})
+	);
+	seaMesh.recieveShadow = true;
+	seaMesh.position.set(0, MAX_HEIGHT * 0.1, 0);
+	scene.add(seaMesh);
 
 
 	renderer.setAnimationLoop(() => {
