@@ -129,6 +129,8 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	mapFloor.position.set(0, -MAX_HEIGHT * 0.05, 0);
 	scene.add(mapFloor);
 
+	clouds();
+
 
 	renderer.setAnimationLoop(() => {
 		controls.update();
@@ -221,4 +223,41 @@ function tree(height, position) {
 	geo3.translate(position.x, height + treeHeight * 1.25 + 1, position.y);
 
 	return mergeBufferGeometries([geo,geo2,geo3])
+}
+
+function clouds() {
+	let geo = new SphereGeometry(0, 0, 0);
+	let count = Math.floor(Math.pow(Math.random(), 0.45) * 4);
+	//count = Math.random()*4
+
+	for (let i = 0; i < count; i++) {
+		const puff1 = new SphereGeometry(1.2, 7, 7);
+		const puff2 = new SphereGeometry(1.5, 7, 7);
+		const puff3 = new SphereGeometry(0.9, 7, 7);
+
+		puff1.translate(-1.85, Math.random() * 0.3, 0);
+		puff1.translate(0, Math.random() * 0.3, 0);
+		puff1.translate(1.85, Math.random() * 0.3, 0);
+
+		const cloudGeo = mergeBufferGeometries([puff1, puff2, puff3]);
+		cloudGeo.translate(
+			Math.random() * 20 - 10,
+			Math.random() * 7 + 7,
+			Math.random() * 20 - 10
+		);
+		cloudGeo.rotateY(Math.random() * Math.PI * 2);
+
+		geo = mergeBufferGeometries([geo, cloudGeo]);
+	}
+
+	const mesh = new Mesh(
+		geo,
+		new MeshStandardMaterial({
+			envMap: envmap,
+			envMapIntensity: 0.75,
+			flatShading:true
+		})
+	);
+
+	scene.add(mesh);
 }
