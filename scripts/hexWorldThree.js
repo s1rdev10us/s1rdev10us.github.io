@@ -1,4 +1,4 @@
-import { TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { PointLight, PCFSoftShadowMap, TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
@@ -16,7 +16,19 @@ renderer.setSize(innerWidth, innerHeight);
 renderer.toneMapping = ACESFilmicToneMapping;
 renderer.outputEncoding = sRGBEncoding;
 renderer.physicallyCorrectLights = true;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
+
+const light = new PointLight(new Color("#FFCB8E").convertSRGBToLinear(), 80, 200)
+light.position.set(10, 20, 10)
+
+light.castShadow = true;
+light.shadow.mapSize.width = 512;
+light.shadow.mapSize = 512;
+light.shadow.camera.near = 0.5;
+light.shadow.camera.far = 500;
+scene.add(light);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 0, 0);
@@ -68,6 +80,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	let sandMesh = hexMesh(sandGeo, textures.sand);
 	scene.add(stoneMesh, dirtMesh, dirt2Mesh, sandMesh, grassMesh);
 
+
 	renderer.setAnimationLoop(() => {
 		controls.update();
 		renderer.render(scene, camera);
@@ -112,13 +125,14 @@ function makeHex(height, position) {
 function hexMesh(geo, map) {
 	let mat = new MeshPhysicalMaterial({
 		envMap: envmap,
-		envMapIntensity: 1,
-		//envMapIntensity: 0.135,
+		envMapIntensity: 0.135,
 		flatShading: true,
 		map
 	});
 
 	let mesh = new Mesh(geo, mat);
+	mesh.castShadow = true;
+	mesh.recieveShadow = true;
 
 	return mesh;
 }
