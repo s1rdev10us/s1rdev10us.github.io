@@ -31,11 +31,11 @@ let envmap;
 	envmap = pmrem.fromEquirectangular(envmapTexture).texture;
 
 	for (var i = -10; i <= 10; i++) {
-		for (var j = -10; j <= 10; i++) {
+		for (var j = -10; j <= 10; j++) {
 			makeHex(3, new Vector2(i,j));
 		}
 	}
-	//makeHex(3, new Vector2(0, 0));
+	
 	let hexagonMesh = new Mesh(
 		hexagonGeometries,
 		new MeshStandardMaterial({
