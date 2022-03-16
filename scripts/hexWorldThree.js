@@ -37,7 +37,6 @@ let envmap;
 			let position = tileToPosition(i, j);
 
 			if (position.length() > 16) continue;
-			console.log(simplex.noise2D);
 			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
 
