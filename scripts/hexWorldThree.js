@@ -32,7 +32,11 @@ let envmap;
 
 	for (var i = -10; i <= 10; i++) {
 		for (var j = -10; j <= 10; j++) {
-			makeHex(3, tileToPosition(i,j));
+			let position = tileToPosition(i, j);
+
+			if (position.length() > 16) continue;
+
+			makeHex(3, position);
 		}
 	}
 	
