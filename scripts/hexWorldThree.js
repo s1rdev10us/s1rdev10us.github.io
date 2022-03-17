@@ -36,7 +36,7 @@ controls.dampingFactor = 0.05;
 controls.enableDamping = true;
 
 let envmap;
-
+const SIZE = 2;
 const MAX_HEIGHT = 10;
 const STONE_HEIGHT = MAX_HEIGHT * 0.8;
 const DIRT_HEIGHT = MAX_HEIGHT * 0.7;
@@ -60,11 +60,11 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 	const simplex = new SimplexNoise();
 
-	for (var i = -15; i <= 15; i++) {
-		for (var j = -15; j <= 15; j++) {
+	for (var i = -(SIZE * 15); i <= (SIZE * 15); i++) {
+		for (var j = -(SIZE * 15); j <= (SIZE * 15); j++) {
 			let position = tileToPosition(i, j);
 
-			if (position.length() > 16) continue;
+			if (position.length() > (SIZE * 16)) continue;
 
 			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
@@ -82,7 +82,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 
 	let seaMesh = new Mesh(
-		new CylinderGeometry(17, 17, MAX_HEIGHT * 0.2, 50),
+		new CylinderGeometry((SIZE * 17), (SIZE * 17), MAX_HEIGHT * 0.2, 50),
 		new MeshPhysicalMaterial({
 			envMap: envmap,
 			color: new Color("#55aaff").convertSRGBToLinear().multiplyScalar(3),
@@ -103,7 +103,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 
 	let mapContainer = new Mesh(
-		new CylinderGeometry(17.1, 17.1, MAX_HEIGHT * 0.25, 50, 1, true),
+		new CylinderGeometry((SIZE * 17) + 0.1, (SIZE * 17)+0.1, MAX_HEIGHT * 0.25, 50, 1, true),
 		new MeshPhysicalMaterial({
 			envMap: envmap,
 			map: textures.dirt,
@@ -117,7 +117,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 
 	let mapFloor = new Mesh(
-		new CylinderGeometry(18.5, 18.5, MAX_HEIGHT * 0.1, 50),
+		new CylinderGeometry((SIZE * 18) + 0.5, (SIZE * 18) + 0.5, MAX_HEIGHT * 0.1, 50),
 		new MeshPhysicalMaterial({
 			envMap: envmap,
 			map: textures.dirt2,
