@@ -99,7 +99,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	);
 	seaMesh.recieveShadow = true;
 	seaMesh.position.set(0, MAX_HEIGHT * 0.1, 0);
-	scene.add(seaMesh);
+	//scene.add(seaMesh);
 
 
 	let mapContainer = new Mesh(
