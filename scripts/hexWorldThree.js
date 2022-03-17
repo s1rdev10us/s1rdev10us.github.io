@@ -4,13 +4,18 @@ import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/contro
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
 import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
 
+const newSeed=((Math.floor((Math.random()*9+1)**(Math.random()*9+1))));
+const SEED = !(new URLSearchParams(window.location.href).has('seed'))?newSeed:parseInt(new URLSearchParams(window.location.href).get('seed'));
+
+const newSize= (window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000?1:(Math.floor(Math.random() * 4)+1);
+const SIZE = !(new URLSearchParams(window.location.href).has('size'))?(newSize):(new URLSearchParams(window.location.href).get('size'));
+console.log(SIZE, SEED, newSize, newSeed);
 const scene = new Scene();
 scene.background = new Color("#222222");
-const SIZE = (window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000?1:(Math.floor(Math.random() * 4)+1);
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
 camera.position.set(-17*SIZE, 31*SIZE, 33*SIZE);
 //camera.position.set(0, 0, 50)
-console.log((window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000);console.log(SIZE);
+
 const renderer = new WebGLRenderer({ antialias: true });
 renderer.setSize(innerWidth, innerHeight);
 renderer.toneMapping = ACESFilmicToneMapping;
@@ -58,7 +63,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 		stone: await new TextureLoader().loadAsync("./assets/stone.png"),
 	};
 
-	const simplex = new SimplexNoise();
+	const simplex = new SimplexNoise(SEED);
 
 	for (var i = -(SIZE * 20); i <= (SIZE * 20); i++) {
 		for (var j = -(SIZE * 20); j <= (SIZE * 20); j++) {
@@ -265,3 +270,6 @@ function clouds() {
 	);
 	scene.add(mesh);
 }
+
+console.log('To recreate world follow this link: "https://s1rdev10us.github.io/three/?a=b&seed='+SEED+'&size='+SIZE+'"');
+document.querySelector('title').innerHTML='First test of three.js, Size: '+SIZE;
