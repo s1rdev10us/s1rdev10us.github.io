@@ -66,7 +66,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 			if (position.length() > (SIZE * 16)) continue;
 
-			let noise = (simplex.noise2D(i * 0.1, j * 0.1) + 1) * 0.5;
+			let noise = (simplex.noise2D(i * 0.01, j * 0.01) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
 
 			makeHex(noise*MAX_HEIGHT, position);
