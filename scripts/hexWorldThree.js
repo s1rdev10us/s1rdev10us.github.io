@@ -60,8 +60,8 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 	const simplex = new SimplexNoise();
 
-	for (var i = -(SIZE * 15); i <= (SIZE * 15); i++) {
-		for (var j = -(SIZE * 15); j <= (SIZE * 15); j++) {
+	for (var i = -(SIZE * 20); i <= (SIZE * 20); i++) {
+		for (var j = -(SIZE * 20); j <= (SIZE * 20); j++) {
 			let position = tileToPosition(i, j);
 
 			if (position.length() > (SIZE * 16)) continue;
