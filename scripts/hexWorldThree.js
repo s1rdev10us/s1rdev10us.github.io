@@ -80,6 +80,10 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	let sandMesh = hexMesh(sandGeo, textures.sand);
 	scene.add(stoneMesh, dirtMesh, dirt2Mesh, sandMesh, grassMesh);
 
+	let seaTexture = textures.water;
+	seaTexture.repeat = new Vector2(1, 1);
+	seaTexture.wrapS = RepeatWrapping;
+	seaTexture.wrapT = RepeatWrapping;
 
 	let seaMesh = new Mesh(
 		new CylinderGeometry((SIZE * 17), (SIZE * 17), MAX_HEIGHT * 0.2, 50),
@@ -93,8 +97,8 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 			envMapIntensity: 0.2,
 			roughness: 1,
 			metalness: 0.025,
-			roughnessMap: textures.water,
-			metalnessMap: textures.water
+			roughnessMap: seaTexture,
+			metalnessMap: seaTexture
 		})
 	);
 	seaMesh.recieveShadow = true;
