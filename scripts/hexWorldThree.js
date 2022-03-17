@@ -6,7 +6,7 @@ import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
 
 const scene = new Scene();
 scene.background = new Color("#222222");
-const SIZE = Math.floor(Math.random() * 3)+1;
+const SIZE = (window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000?1:(Math.floor(Math.random() * 3)+1);
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
 camera.position.set(-17*SIZE, 31*SIZE, 33*SIZE);
 //camera.position.set(0, 0, 50)
