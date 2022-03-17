@@ -6,7 +6,7 @@ import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
 
 const scene = new Scene();
 scene.background = new Color("#222222");
-const SIZE = (window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000?1:(Math.floor(Math.random() * 3)+1);
+const SIZE = (window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000?1:(Math.floor(Math.random() * 4)+1);
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
 camera.position.set(-17*SIZE, 31*SIZE, 33*SIZE);
 //camera.position.set(0, 0, 50)
@@ -20,14 +20,14 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
-const light = new PointLight(new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear(), 80, 200)
-light.position.set(10, 20, 10)
+const light = new PointLight(new Color("#FFCB8E").convertSRGBToLinear().convertSRGBToLinear(), 80, 200);
+light.position.set(10*SIZE, 20*SIZE, 10*SIZE)
 
 light.castShadow = true;
-light.shadow.mapSize.width = 512;
-light.shadow.mapSize.height = 512;
+light.shadow.mapSize.width = 512*SIZE;
+light.shadow.mapSize.height = 512*SIZE;
 light.shadow.camera.near = 0.5;
-light.shadow.camera.far = 500;
+light.shadow.camera.far = 500*SIZE;
 scene.add(light);
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -263,6 +263,5 @@ function clouds() {
 			flatShading:true
 		})
 	);
-
 	scene.add(mesh);
 }
