@@ -9,18 +9,18 @@
     height:25%;
     width:25%;
 }
-.twenty48-light {
+.twenty48.light {
     background-color:yellow;
 }
-.twenty48-medium {
+.twenty48.medium {
     background-color:orange;
 }
-.twenty48-dark {
+.twenty48.dark {
     background-color:red;
 }
-.twenty48-vdark {
+.twenty48.vdark {
     background-color:darkred;
 }
-.twenty48-empty {
+.twenty48.empty {
     background-color:lightgray;
 }

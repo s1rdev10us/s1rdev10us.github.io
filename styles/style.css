@@ -2,8 +2,8 @@ body {
 	background-color: #222;
 	color: aqua;
 	scrollbar-base-color: aqua;
-	background-clip: padding-box;
 	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
 	border: 3px solid transparent;
 	border-radius: 5px
 }

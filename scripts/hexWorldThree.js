@@ -6,9 +6,9 @@ import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise';
 
 const scene = new Scene();
 scene.background = new Color("#222222");
-
+const SIZE = Math.floor(Math.random() * 3)+1;
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
-camera.position.set(-17, 31, 33);
+camera.position.set(-17*SIZE, 31*SIZE, 33*SIZE);
 //camera.position.set(0, 0, 50)
 
 const renderer = new WebGLRenderer({ antialias: true });
@@ -36,7 +36,7 @@ controls.dampingFactor = 0.05;
 controls.enableDamping = true;
 
 let envmap;
-const SIZE = Math.floor(Math.random * 9)+1;//const SIZE = 2;
+/*const SIZE = 1;*/
 const MAX_HEIGHT = 10;
 const STONE_HEIGHT = MAX_HEIGHT * 0.8;
 const DIRT_HEIGHT = MAX_HEIGHT * 0.7;
@@ -66,10 +66,10 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 
 			if (position.length() > (SIZE * 16)) continue;
 
-			let noise = (simplex.noise2D(i * 0.01, j * 0.01) + 1) * 0.5;
+			let noise = (simplex.noise2D(i * 0.05, j * 0.05) + 1) * 0.5;
 			noise = Math.pow(noise,1.5);
 
-			makeHex(noise*MAX_HEIGHT, position);
+			makeHex(noise * MAX_HEIGHT , position);
 		}
 	}
 
@@ -100,7 +100,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	);
 	seaMesh.recieveShadow = true;
 	seaMesh.position.set(0, MAX_HEIGHT * 0.1, 0);
-	//scene.add(seaMesh);
+	scene.add(seaMesh);
 
 
 	let mapContainer = new Mesh(
@@ -165,13 +165,13 @@ function makeHex(height, position) {
 		stoneGeo = mergeBufferGeometries([geo, stoneGeo]);
 
 		if (Math.random() > 0.8) {
-			stoneGeo = mergeBufferGeometries([geo, stone(height,position)]);
+			stoneGeo = mergeBufferGeometries([stone(height,position,1),stoneGeo]);
 		}
 	} else if (height > DIRT_HEIGHT) {
 		dirtGeo = mergeBufferGeometries([geo, dirtGeo]);
 
 		if (Math.random() > 0.8) {
-			grassGeo = mergeBufferGeometries([geo, tree(height, position)]);
+			grassGeo = mergeBufferGeometries([grassGeo, tree(height, position)]);
 		}
 	} else if (height > GRASS_HEIGHT) {
 		grassGeo = mergeBufferGeometries([geo, grassGeo]);
@@ -179,7 +179,11 @@ function makeHex(height, position) {
 		sandGeo = mergeBufferGeometries([geo, sandGeo]);
 
 		if (Math.random() > 0.8) {
-			stoneGeo = mergeBufferGeometries([geo, stone(height, position)]);
+			if (Math.random() > 0.5) {
+				stoneGeo = mergeBufferGeometries([stone(height, position,0.5),stoneGeo]);
+			}else{
+				sandGeo = mergeBufferGeometries([stone(height, position,1),sandGeo]);
+			}
 		}
 	} else if (height > DIRT2_HEIGHT) {
 		dirt2Geo = mergeBufferGeometries([geo, dirt2Geo]);
@@ -201,11 +205,11 @@ function hexMesh(geo, map) {
 	return mesh;
 }
 
-function stone(height, position) {
+function stone(height, position,sizeing) {
 	const px = Math.random() * 0.4;
 	const pz = Math.random() * 0.4;
 
-	const geo = new SphereGeometry(Math.random() * 0.3 + 0.1, 7, 7);
+	const geo = new SphereGeometry(Math.random() * 0.3*sizeing + 0.1, 7, 7);
 	geo.translate(position.x + px, height, position.y + pz);
 
 	return geo;
@@ -228,7 +232,7 @@ function tree(height, position) {
 
 function clouds() {
 	let geo = new SphereGeometry(0, 0, 0);
-	let count = Math.floor(Math.pow(Math.random(), 0.45) * 4);
+	let count = Math.floor(Math.pow(Math.random(), 0.45) *SIZE* 4);
 	//count = Math.random()*4
 
 	for (let i = 0; i < count; i++) {
@@ -242,9 +246,9 @@ function clouds() {
 
 		const cloudGeo = mergeBufferGeometries([puff1, puff2, puff3]);
 		cloudGeo.translate(
-			Math.random() * 20 - 10,
+			Math.random() *SIZE* 16 - 10,
 			Math.random() * 7 + 7,
-			Math.random() * 20 - 10
+			Math.random() *SIZE* 16 - 10
 		);
 		cloudGeo.rotateY(Math.random() * Math.PI * 2);
 

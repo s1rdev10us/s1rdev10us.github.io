@@ -2,8 +2,9 @@
     position: fixed;
     background-image: url(../images/footer_lodyasDarktoLight.png);
     background-repeat: repeat;
-    background-clip: padding-box;
     -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    z-index: 1;
     border: 3px solid;
     border-radius: 5px;
     width: 100%;
