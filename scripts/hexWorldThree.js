@@ -10,7 +10,8 @@ const SIZE = (window.screen.width<window.outerWidth ? window.screen.width:window
 const camera = new PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 1000);
 camera.position.set(-17*SIZE, 31*SIZE, 33*SIZE);
 //camera.position.set(0, 0, 50)
-
+console.log((window.screen.width<window.outerWidth ? window.screen.width:window.outerWidth)<1000
+)
 const renderer = new WebGLRenderer({ antialias: true });
 renderer.setSize(innerWidth, innerHeight);
 renderer.toneMapping = ACESFilmicToneMapping;
