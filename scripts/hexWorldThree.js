@@ -36,7 +36,7 @@ controls.dampingFactor = 0.05;
 controls.enableDamping = true;
 
 let envmap;
-const SIZE = 2;
+const SIZE = Math.floor(Math.random * 9)+1;//const SIZE = 2;
 const MAX_HEIGHT = 10;
 const STONE_HEIGHT = MAX_HEIGHT * 0.8;
 const DIRT_HEIGHT = MAX_HEIGHT * 0.7;
