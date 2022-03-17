@@ -1,4 +1,4 @@
-import { RepeatWrapping, DoubleSide, SphereGeometry, PointLight, PCFSoftShadowMap, TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
+import { DoubleSide, SphereGeometry, PointLight, PCFSoftShadowMap, TextureLoader, Vector2, BoxGeometry, FloatType, MeshStandardMaterial, PMREMGenerator, Scene, PerspectiveCamera, WebGLRenderer, Color, ACESFilmicToneMapping, sRGBEncoding, Mesh, CylinderGeometry, MeshPhysicalMaterial } from 'https://cdn.skypack.dev/three@0.137';
 import { RGBELoader } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/loaders/RGBELoader';
 import { OrbitControls } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/controls/OrbitControls';
 import { mergeBufferGeometries } from 'https://cdn.skypack.dev/three-stdlib@2.8.5/utils/BufferGeometryUtils';
@@ -80,10 +80,7 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 	let sandMesh = hexMesh(sandGeo, textures.sand);
 	scene.add(stoneMesh, dirtMesh, dirt2Mesh, sandMesh, grassMesh);
 
-	let seaTexture = textures.water;
-	seaTexture.repeat = new Vector2(1, 1);
-	seaTexture.wrapS = RepeatWrapping;
-	seaTexture.wrapT = RepeatWrapping;
+	
 
 	let seaMesh = new Mesh(
 		new CylinderGeometry((SIZE * 17), (SIZE * 17), MAX_HEIGHT * 0.2, 50),
@@ -97,8 +94,8 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 			envMapIntensity: 0.2,
 			roughness: 1,
 			metalness: 0.025,
-			roughnessMap: seaTexture,
-			metalnessMap: seaTexture
+			roughnessMap: textures.water,
+			metalnessMap: textures.water
 		})
 	);
 	seaMesh.recieveShadow = true;
