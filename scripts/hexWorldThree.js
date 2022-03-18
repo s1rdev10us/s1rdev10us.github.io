@@ -100,7 +100,9 @@ const DIRT2_HEIGHT = MAX_HEIGHT * 0;
 			roughness: 1,
 			metalness: 0.025,
 			roughnessMap: textures.water,
-			metalnessMap: textures.water
+			metalnessMap: textures.water,
+			
+
 		})
 	);
 	seaMesh.recieveShadow = true;
@@ -256,7 +258,7 @@ function clouds() {
 			Math.random() *SIZE* 16 - 10
 		);
 		cloudGeo.rotateY(Math.random() * Math.PI * 2);
-
+		
 		geo = mergeBufferGeometries([geo, cloudGeo]);
 	}
 
@@ -265,11 +267,15 @@ function clouds() {
 		new MeshStandardMaterial({
 			envMap: envmap,
 			envMapIntensity: 0.75,
-			flatShading:true
+			flatShading:true,
+			transparent:true,
+			opacity:0.625,
+			side:DoubleSide,
+
 		})
 	);
 	scene.add(mesh);
 }
 
-console.log('To recreate world follow this link: "https://s1rdev10us.github.io/three/?a=b&seed='+SEED+'&size='+SIZE+'"');
+console.log(`To recreate world follow this link: "http${window.location.protocol == "https:"?'s':''}://${location.hostname}/three/?a=b&seed=${SEED}&size=${SIZE}"`);
 document.querySelector('title').innerHTML='First test of three.js, Size: '+SIZE;
