@@ -242,7 +242,7 @@ function clouds() {
 	let count = Math.floor(Math.pow(Math.random(), 0.45) *SIZE* 4);
 	//count = Math.random()*4
 
-	for (let i = 0; i < count; i++) {
+	for (let i = 0; i <= count; i++) {
 		const puff1 = new SphereGeometry(1.2, 7, 7);
 		const puff2 = new SphereGeometry(1.5, 7, 7);
 		const puff3 = new SphereGeometry(0.9, 7, 7);
