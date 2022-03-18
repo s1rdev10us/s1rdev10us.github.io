@@ -277,5 +277,5 @@ function clouds() {
 	scene.add(mesh);
 }
 
-console.log(`To recreate world follow this link: "http${window.location.protocol == "https:"?'s':''}://${location.hostname}/three/?a=b&seed=${SEED}&size=${SIZE}"`);
+console.log(`To recreate world follow this link: "${window.location.protocol}://${location.hostname}/three/?a=b&seed=${SEED}&size=${SIZE}"`);
 document.querySelector('title').innerHTML='First test of three.js, Size: '+SIZE;
