@@ -21,7 +21,7 @@
     </template>
     <script>
         var x = 0;
-        var faces = !(new URLSearchParams(window.location.href).has('faces'))?(20):parseInt(new URLSearchParams(window.location.href).get('faces'));
+        var faces = !(new URLSearchParams(window.location.href).has('faces'))?(16):parseInt(new URLSearchParams(window.location.href).get('faces'));
         while(x < faces) {
             x+=1;
             var temp = document.getElementsByTagName("template")[0];
