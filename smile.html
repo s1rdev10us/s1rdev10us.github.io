@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smile :)</title>
+    <link rel="stylesheet" href="./styles/smile.css"/>
+</head>
+<body>
+    <template>
+        <label>
+            <input type="checkbox" name="color1"/>
+            <div class="face"></div>
+        </label>
+        <label>
+            <input type="checkbox" name="color2"/>
+            <div class="face"></div>
+        </label>
+    </template>
+    <script>
+        var x = 0;
+        var faces = !(new URLSearchParams(window.location.href).has('faces'))?(20):parseInt(new URLSearchParams(window.location.href).get('faces'));
+        while(x < faces) {
+            x+=1;
+            var temp = document.getElementsByTagName("template")[0];
+            var clon = temp.content.cloneNode(true);
+            document.body.prepend(clon);
+        }
+    </script>
+</body>
+</html>
