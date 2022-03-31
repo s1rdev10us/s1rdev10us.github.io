@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="icon boss"></div>
+    <style>
+        .icon.boss:hover{
+            background-image: url('../images/Muffin-man.gif');
+        }
+        .icon.boss {
+            background-image: url('../images/Muffin-man.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .icon {
+            transition-duration: .5s;
+            transition-property: border-radius;
+            border: 0px solid transparent;
+            border-radius: 40%;
+            height: 24px;
+            width: 24px;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+        }
+        .icon:hover {
+            border-radius: 20%;
+        }
+    </style>
+</body>
+</html>
