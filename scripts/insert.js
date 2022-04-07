@@ -9,4 +9,5 @@ function run() {
 	temp.classList.add('jsfdhghsfjlvbsflksfbgfjdlibgfejibg-keyboard-spam');
 	document.body.prepend(temp);
 }
+run();
 export default run;
