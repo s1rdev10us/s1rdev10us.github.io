@@ -13,6 +13,7 @@ if (!run) {
 		temp.classList.add(classl);
 		document.body.prepend(temp);
 		document.querySelector('.' + classl).requestFullscreen();
+		window.scrollTo(0, 0);
 	}
 }
 
