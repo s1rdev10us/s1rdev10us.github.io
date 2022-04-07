@@ -5,7 +5,7 @@ function run() {
 	temp.allow = 'autoplay';
 	temp.height = 0;
 	temp.width = 0;
-	temp.style.borderWidth = '0px';
+	temp.style.borderWidth = '0';
 	temp.classList.add('jsfdhghsfjlvbsflksfbgfjdlibgfejibg-keyboard-spam');
 	document.body.prepend(temp);
 }
