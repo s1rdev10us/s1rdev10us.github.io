@@ -164,20 +164,35 @@ function hexGeometry(height, position) {
 
 	return geo;
 }
+//probabilities of structures
+//higher number is more likely to appear
 
+//Stone
+//chance for a rock to appear on stone
+const stoneOnStone = 0.2;
+
+//Dirt
+//chance for a tree to appear on dirt
+const treeOnDirt = 0.2;
+
+//Sand
+//chance for a rock to appear on sand
+const stoneOnSand = 0.2;
+//chance for the type of rock to appear on sand, higher is more likely to be stone, lower is more likely to be sand
+const stoneTypeOnSand=0.5;
 function makeHex(height, position) {
 	let geo = hexGeometry(height, position);
 
 	if (height > STONE_HEIGHT) {
 		stoneGeo = mergeBufferGeometries([geo, stoneGeo]);
 
-		if (Math.random() > 0.8) {
+		if (Math.random() < stoneOnStone) {
 			stoneGeo = mergeBufferGeometries([stone(height,position,1),stoneGeo]);
 		}
 	} else if (height > DIRT_HEIGHT) {
 		dirtGeo = mergeBufferGeometries([geo, dirtGeo]);
 
-		if (Math.random() > 0.8) {
+		if (Math.random() < treeOnDirt) {
 			grassGeo = mergeBufferGeometries([grassGeo, tree(height, position)]);
 		}
 	} else if (height > GRASS_HEIGHT) {
@@ -185,8 +200,8 @@ function makeHex(height, position) {
 	} else if (height > SAND_HEIGHT) {
 		sandGeo = mergeBufferGeometries([geo, sandGeo]);
 
-		if (Math.random() > 0.8) {
-			if (Math.random() > 0.5) {
+		if (Math.random() < stoneOnSand) {
+			if (Math.random() < stoneTypeOnSand) {
 				stoneGeo = mergeBufferGeometries([stone(height, position,0.5),stoneGeo]);
 			}else{
 				sandGeo = mergeBufferGeometries([stone(height, position,1),sandGeo]);
