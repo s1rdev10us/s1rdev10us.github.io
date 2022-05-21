@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .jsfdhghsfjlvbsflksfbgfjdlibgfejibg-keyboard-spam {
+            border-width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var x = false;
+        setInterval(function () {
+            if (x != document.hasFocus()) {
+                x = document.hasFocus();
+                switch (x) {
+                    case true:
+                        console.log('gained focus');
+                        document.body.innerHTML='';
+                        break;
+                    case false:
+                        console.log('Lost focus');
+                        let temp = document.createElement('iframe');
+                        //html = html.trim(); // Never return a space text node as a result
+
+                        temp.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&autoplay=1&loop=1';
+                        temp.allow = 'autoplay';
+                        temp.height = 0;
+                        temp.width = 0;
+                        temp.classList.add('jsfdhghsfjlvbsflksfbgfjdlibgfejibg-keyboard-spam');
+                        document.body.prepend(temp);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
