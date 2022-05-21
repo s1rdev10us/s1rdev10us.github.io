@@ -23,7 +23,7 @@
                         temp.allow = 'autoplay';
                         temp.height = 0;
                         temp.width = 0;
-                        temp.classList.add('jsfdhghsfjlvbsflksfbgfjdlibgfejibg-keyboard-spam');
+                        temp.style.display='none';
                         document.getElementById(idy).prepend(temp);
                         break;
                     default:
